@@ -15,7 +15,8 @@
   "author": "GuLinga",
   "license": "ISC",
   "dependencies": {
-    "cac": "^6.7.14"
+    "cac": "^6.7.14",
+    "vite": "^4.3.5"
   },
   "devDependencies": {
     "@types/node": "^20.1.3",
