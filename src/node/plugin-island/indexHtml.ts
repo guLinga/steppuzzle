@@ -1,11 +1,29 @@
 import { readFile } from "fs/promises";
 import { Plugin } from "vite";
-import { DEFAULT_HTML_PATH } from "../constants";
+import { CLIENT_ENTRY_PATH, DEFAULT_HTML_PATH } from "../constants";
 
 export function pluginIndexHtml(): Plugin {
   return {
     name: "steppuzzle:index-html",
     apply: "serve",
+    // transformIndexHtml vite的一个函数钩子 用于在构建过程中通过修改生成 HTML 页面的内容或添加额外的内容来向项目添加一些自定义的逻辑。
+    // 插入入口 script 标签
+    transformIndexHtml(html) {
+      return {
+        html,
+        tags: [
+          {
+            tag: "script",
+            attrs: {
+              type: "module",
+              src: `/@fs/${CLIENT_ENTRY_PATH}`,
+            },
+            injectTo: "body",
+          },
+        ],
+      };
+    },
+    // configureServer 是 Vite 插件中的一个函数钩子，可以用来配置开发服务器。
     configureServer(server) {
       return () => {
         server.middlewares.use(async (req, res, next) => {
