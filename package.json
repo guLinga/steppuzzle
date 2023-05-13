@@ -1,0 +1,24 @@
+{
+  "name": "steppuzzle",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "ts:start": "echo 'start typesctipt pack only once' && tsc",
+    "cli:test": "pnpm ts:start && echo 'cli run' && node dist/node/cli",
+    "ts:run": "echo 'start typescript long' && tsc --watch"
+  },
+  "bin": {
+    "steppuzzle": "bin/steppuzzle.js"
+  },
+  "keywords": [],
+  "author": "GuLinga",
+  "license": "ISC",
+  "dependencies": {
+    "cac": "^6.7.14"
+  },
+  "devDependencies": {
+    "@types/node": "^20.1.3",
+    "typescript": "^5.0.4"
+  }
+}
