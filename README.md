@@ -14,6 +14,12 @@
 			|——index.ts # 常量文件
 		|——plugin-island # vite 插件
 			|——indexHtml.ts # vite 生成
+	|——runtime
+		|——App.tsx # 客户端 App 组件
+		|——client-entry.tsx # 客户端入口
+	|——theme-default
+		|——Layout
+			|——index.tsx # Layout 组件
 |——dist # typescript 打包后的文件
 |——bin
 	|——steppuzzle.js # cli 执行文件

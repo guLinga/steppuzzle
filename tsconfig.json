@@ -4,5 +4,6 @@
     "rootDir": "src",// 打包入口文件
     "module": "commonjs",// 指定代码编译后生成的模块格式
     "target": "ESNext",// 指定代码编译后的js版本
+    "jsx": "react-jsx",// 解析 jsx tsx 语法
   }
 }
