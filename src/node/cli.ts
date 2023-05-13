@@ -1,4 +1,6 @@
 import { cac } from 'cac'
+import { resolve } from 'path';
+import { build } from './build';
 import { createDevServer } from './dev'
 
 // 获取 package.json 中的版本号
@@ -22,7 +24,13 @@ cli
 cli
   .command("build [root]", "build for production")
   .action(async (root: string) => {
-    console.log("build", root);
+    try {
+      root = resolve(root);
+      // SSG 生成的核心逻辑
+      await build(root);
+    } catch (e) {
+      console.log(e);
+    }
   });
 
 cli.parse();
