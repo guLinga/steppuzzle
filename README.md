@@ -9,7 +9,7 @@
 |——src
 	|——node
 		|——cli.ts # cli 入口
-		|——dev.ts # devServer
+		|——dev.ts # vit 配置
 		|——constants
 			|——index.ts # 常量文件
 		|——plugin-island # vite 插件
