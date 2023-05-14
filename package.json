@@ -15,7 +15,8 @@
     "eslint:run": "echo 'run eslint and prettier' && eslint --fix --ext .ts,.tsx,.js,.jsx --quiet ./",
     "test:init": "vitest run",
     "test:ui": "vitest --ui",
-    "prepare:e2e": "tsx scripts/prepare-e2e.ts"
+    "prepare:e2e": "tsx scripts/prepare-e2e.ts",
+    "test:e2e": "playwright test"
   },
   "bin": {
     "steppuzzle": "bin/steppuzzle.js"
