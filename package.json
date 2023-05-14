@@ -4,10 +4,14 @@
   "description": "",
   "main": "index.js",
   "scripts": {
-    "ts:start": "echo 'start typesctipt pack only once' && tsc",
-    "cli:test": "pnpm ts:start && echo 'cli run' && node dist/node/cli",
-    "ts:run": "echo 'start typescript long' && tsc --watch",
-    "ssg:run": "pnpm serve docs/build"
+    "build": "steppuzzle build docs",
+    "ts:build": "echo 'start typesctipt build' && tsc",
+    "ts:run": "echo 'start typescript run' && tsc --watch",
+    "cli:test": "echo 'cli run' && pnpm ts:start && node dist/node/cli",
+    "ssg:run": "echo 'ssg build' && pnpm serve docs/build",
+    "tsup:build": "echo 'start tsup build' && tsup",
+    "tsup:run": "echo 'start tsup run' && tsup --watch",
+    "server:run": "echo 'localhost serve' && pnpm build && pnpm serve docs/build"
   },
   "bin": {
     "steppuzzle": "bin/steppuzzle.js"
@@ -29,6 +33,8 @@
     "@types/node": "^20.1.3",
     "@types/react": "^18.2.6",
     "@types/react-dom": "^18.2.4",
+    "ora": "^6.3.0",
+    "tsup": "^6.7.0",
     "typescript": "^5.0.4"
   }
 }

@@ -27,6 +27,7 @@
 	|——steppuzzle.js # cli 执行文件
 |——docs # 模拟 markdown 目录
 |——template.html # html 模板
+|——tsup.config.ts # 使用 tsup 将 cli 重新打包
 ```
 
 ### command
