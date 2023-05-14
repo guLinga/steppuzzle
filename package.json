@@ -14,7 +14,8 @@
     "server:run": "echo 'localhost serve' && pnpm build && pnpm serve docs/build",
     "eslint:run": "echo 'run eslint and prettier' && eslint --fix --ext .ts,.tsx,.js,.jsx --quiet ./",
     "test:init": "vitest run",
-    "test:ui": "vitest --ui"
+    "test:ui": "vitest --ui",
+    "prepare:e2e": "tsx scripts/prepare-e2e.ts"
   },
   "bin": {
     "steppuzzle": "bin/steppuzzle.js"
@@ -54,10 +55,12 @@
     "eslint": "^8.40.0",
     "eslint-plugin-react": "^7.32.2",
     "eslint-plugin-react-hooks": "^4.6.0",
+    "execa": "^5.1.1",
     "husky": "^8.0.3",
     "lint-staged": "^13.2.2",
     "ora": "^6.3.0",
     "tsup": "^6.7.0",
+    "tsx": "^3.12.7",
     "typescript": "^5.0.4",
     "vitest": "^0.31.0"
   }

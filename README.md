@@ -8,6 +8,7 @@
 |——tsconfig.json # ts配置文件
 |——src
 	|——node
+		|——__test__ # vitest 测试
 		|——cli.ts # cli 入口
 		|——dev.ts # vit 配置
 		|——build.ts # SSG 生成 打包
@@ -25,9 +26,16 @@
 |——dist # typescript 打包后的文件
 |——bin
 	|——steppuzzle.js # cli 执行文件
+|——script
+	|——prepare-e2e.ts # e2e 测试
+|——e2e
+	|——playground
+		|——basic # e2e 测试目录
 |——docs # 模拟 markdown 目录
 |——template.html # html 模板
 |——tsup.config.ts # 使用 tsup 将 cli 重新打包
+|——vitest.config.ts # vitest 测试
+|——playwright.config.ts # 内置浏览器
 ```
 
 ### command
