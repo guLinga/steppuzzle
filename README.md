@@ -94,3 +94,9 @@ e2e 测试
 ```
 pnpm test:e2e
 ```
+
+运行打包后的静态文件
+
+```
+pnpm server:run
+```
