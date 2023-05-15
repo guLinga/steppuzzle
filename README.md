@@ -12,6 +12,7 @@
 		|——cli.ts # cli 入口
 		|——dev.ts # vit 配置
 		|——build.ts # SSG 生成 打包
+		|——config.ts # 获取 配置文件
 		|——constants
 			|——index.ts # 常量文件
 		|——plugin-island # vite 插件
@@ -23,6 +24,9 @@
 	|——theme-default
 		|——Layout
 			|——index.tsx # Layout 组件
+	|——shared
+		|——types
+			|——index.ts # 类型配置文件
 |——dist # typescript 打包后的文件
 |——bin
 	|——steppuzzle.js # cli 执行文件
