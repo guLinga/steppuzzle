@@ -25,7 +25,7 @@ export async function resolveUserConfig(
   root: string,
   command: 'serve' | 'build',
   mode: 'development' | 'production'
-): Promise<[string, UserConfig]> {
+) {
   // 1. 获取配置文件路径
   const configPath = getUserConfigPath(root);
   // 2. 读取配置文件的内容
@@ -46,9 +46,9 @@ export async function resolveUserConfig(
     const userConfig = await (typeof rawConfig === 'function'
       ? rawConfig()
       : rawConfig);
-    return [configPath, userConfig as UserConfig];
+    return [configPath, userConfig] as const;
   } else {
-    return [configPath, {} as UserConfig];
+    return [configPath, {} as UserConfig] as const;
   }
 }
 
@@ -65,7 +65,7 @@ export async function resolveConfig(
   root: string,
   command: 'serve' | 'build',
   mode: 'development' | 'production'
-) {
+): Promise<SiteConfig> {
   const [configPath, userConfig] = await resolveUserConfig(root, command, mode);
   const siteConfig: SiteConfig = {
     root,

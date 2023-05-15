@@ -3,10 +3,12 @@
     "baseUrl": "src",
     "outDir": "dist",// 打包生成危机目录
     "rootDir": "src",// 打包入口文件
-    "module": "commonjs",// 指定代码编译后生成的模块格式
+    "module": "ESNext",// 指定代码编译后生成的模块格式
     "target": "ESNext",// 指定代码编译后的js版本
     "jsx": "react-jsx",// 解析 jsx tsx 语法
     "esModuleInterop": true,// CommonJS模块中使用ES模块导入语法，需要安装@types/node
+    "moduleResolution": "node"
   },
-  "exclude": ["tsconfig.json"]
+  "exclude": ["tsconfig.json", "tsup.config.ts"],
+  "include": ["e2e/**/*.ts", "src/**/*.ts", "src/**/*.tsx"]
 }

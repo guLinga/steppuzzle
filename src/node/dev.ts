@@ -10,6 +10,7 @@ export async function createDevServer(
   restartServer: () => Promise<void>
 ) {
   const siteConfig = await resolveConfig(root, 'serve', 'development');
+  console.log('siteConfig', siteConfig.siteData);
 
   return createViteDevServer({
     root,

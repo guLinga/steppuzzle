@@ -1,7 +1,6 @@
 import { cac } from 'cac';
 import { resolve } from 'path';
 import { build } from './build';
-import { createDevServer } from './dev';
 
 // 获取 package.json 中的版本号
 // const version = require('../../package.json').version;
@@ -12,6 +11,7 @@ const cli = cac('steppuzzle').version('0.0.1').help();
 cli.command('dev [root]', 'start dev server').action(async (root: string) => {
   // 启动 devserver
   const createServer = async () => {
+    const { createDevServer } = await import('./dev');
     const server = await createDevServer(root, async () => {
       await server.close();
       await createServer();
