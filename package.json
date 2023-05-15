@@ -5,6 +5,7 @@
   "main": "index.js",
   "scripts": {
     "build": "steppuzzle build docs",
+    "dev": "steppuzzle dev docs",
     "ts:build": "echo 'start typesctipt build' && tsc",
     "ts:run": "echo 'start typescript run' && tsc --watch",
     "cli:test": "echo 'cli run' && pnpm ts:start && node dist/node/cli",
