@@ -17,6 +17,7 @@
 			|——index.ts # 常量文件
 		|——plugin-island # vite 插件
 			|——indexHtml.ts # vite 生成
+			|——config.ts # 匹配 import siteData from 'steppuzzle:site-data'; 将 网站配置信息 添加到页面
 	|——runtime
 		|——App.tsx # 客户端 App 组件
 		|——client-entry.tsx # 客户端入口
@@ -47,19 +48,49 @@
 编译 ts 代码 生成 js 代码
 
 ```
-pnpm ts:start
+pnpm ts:build
 or
 pnpm ts:run
+```
+
+编译代码
+
+```
+pnpm tsup:run
+or
+pnpm tsup:build
 ```
 
 打包生成 ssg
 
 ```
 steppuzzle build docs
+or
+pnpm build
 ```
 
 开启本地服务
 
 ```
 steppuzzle dev docs
+or
+pnpm dev
+```
+
+单元测试
+
+```
+pnpm test:init
+```
+
+单元测试 并打开测试 ui 视图
+
+```
+pnpm test:ui
+```
+
+e2e 测试
+
+```
+pnpm test:e2e
 ```
