@@ -1,5 +1,6 @@
 {
   "compilerOptions": {
+    "baseUrl": "src",
     "outDir": "dist",// 打包生成危机目录
     "rootDir": "src",// 打包入口文件
     "module": "commonjs",// 指定代码编译后生成的模块格式

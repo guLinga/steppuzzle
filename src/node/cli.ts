@@ -11,11 +11,17 @@ const cli = cac('steppuzzle').version('0.0.1').help();
 // 添加 dev 命令
 cli.command('dev [root]', 'start dev server').action(async (root: string) => {
   // 启动 devserver
-  const server = await createDevServer(root);
-  // 监听 devserver
-  await server.listen();
-  // 输出信息
-  server.printUrls();
+  const createServer = async () => {
+    const server = await createDevServer(root, async () => {
+      await server.close();
+      await createServer();
+    });
+    // 监听 devserver
+    await server.listen();
+    // 输出信息
+    server.printUrls();
+  };
+  await createServer();
 });
 
 // 添加 build 命令
