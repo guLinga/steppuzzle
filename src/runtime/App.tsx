@@ -1,4 +1,4 @@
-import { Layout } from '../theme-default/Layout';
+import { Layout } from '../theme-default';
 import siteData from 'steppuzzle:site-data';
 
 export function App() {

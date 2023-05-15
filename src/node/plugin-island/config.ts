@@ -1,8 +1,9 @@
-import { relative } from 'path';
+import { relative, join } from 'path';
 import { Plugin, normalizePath } from 'vite';
 import { SiteConfig } from 'shared/types/index';
 
 const SITE_DATA_ID = 'steppuzzle:site-data'; // 匹配 App.tsx 中的 import siteData from 'steppuzzle:site-data';
+import { PACKAGE_ROOT } from '../constants/index';
 
 export function pluginConfig(
   config: SiteConfig,
@@ -19,6 +20,15 @@ export function pluginConfig(
       if (id === '\0' + SITE_DATA_ID) {
         return `export default ${JSON.stringify(config.siteData)}`;
       }
+    },
+    config() {
+      return {
+        resolve: {
+          alias: {
+            '@runtime': join(PACKAGE_ROOT, 'src', 'runtime', 'index.ts')
+          }
+        }
+      };
     },
     async handleHotUpdate(ctx) {
       // 这里用 normalizePath 包裹一下，有时 config.configPath 与 ctx.file 的路径 中的 / \ 正好相反

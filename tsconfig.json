@@ -7,7 +7,11 @@
     "target": "ESNext",// 指定代码编译后的js版本
     "jsx": "react-jsx",// 解析 jsx tsx 语法
     "esModuleInterop": true,// CommonJS模块中使用ES模块导入语法，需要安装@types/node
-    "moduleResolution": "node"
+    "moduleResolution": "node",
+    "paths": {
+      "shared/*": ["shared/*"],
+      "@runtime": ["runtime/index.ts"]
+    }
   },
   "exclude": ["tsconfig.json", "tsup.config.ts"],
   "include": ["e2e/**/*.ts", "src/**/*.ts", "src/**/*.tsx"]
