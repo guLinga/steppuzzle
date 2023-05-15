@@ -7,7 +7,7 @@ import { PACKAGE_ROOT } from '../constants/index';
 
 export function pluginConfig(
   config: SiteConfig,
-  restartServer: () => Promise<void>
+  restartServer?: () => Promise<void>
 ): Plugin {
   return {
     name: 'steppuzzle:config',

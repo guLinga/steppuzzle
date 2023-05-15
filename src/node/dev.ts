@@ -1,9 +1,9 @@
 import { createServer as createViteDevServer } from 'vite';
-import { pluginIndexHtml } from './plugin-island/indexHtml';
+import { pluginIndexHtml } from './plugin-steppuzzle/indexHtml';
 import pluginReact from '@vitejs/plugin-react'; // 保持组件状态
 import { PACKAGE_ROOT } from './constants';
 import { resolveConfig } from './config';
-import { pluginConfig } from './plugin-island/config';
+import { pluginConfig } from './plugin-steppuzzle/config';
 
 export async function createDevServer(
   root = process.cwd(),

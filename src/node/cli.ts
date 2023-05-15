@@ -1,6 +1,7 @@
 import { cac } from 'cac';
 import { resolve } from 'path';
 import { build } from './build';
+import { resolveConfig } from './config';
 
 // 获取 package.json 中的版本号
 // const version = require('../../package.json').version;
@@ -30,8 +31,9 @@ cli
   .action(async (root: string) => {
     try {
       root = resolve(root);
+      const config = await resolveConfig(root, 'build', 'production');
       // SSG 生成的核心逻辑
-      await build(root);
+      await build(root, config);
     } catch (e) {
       console.log(e);
     }
