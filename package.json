@@ -31,6 +31,7 @@
   "author": "GuLinga",
   "license": "ISC",
   "dependencies": {
+    "@loadable/component": "^5.15.3",
     "@vitejs/plugin-react": "^4.0.0",
     "cac": "^6.7.14",
     "eslint-config-prettier": "^8.8.0",
