@@ -3,3 +3,5 @@ declare module 'steppuzzle:site-data' {
   const siteData: UserConfig;
   export default siteData;
 }
+
+declare module 'steppuzzle:routes';
