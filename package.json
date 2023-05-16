@@ -64,9 +64,13 @@
     "husky": "^8.0.3",
     "lint-staged": "^13.2.2",
     "ora": "^6.3.0",
+    "rehype-stringify": "^9.0.3",
+    "remark-parse": "^10.0.1",
+    "remark-rehype": "^10.1.0",
     "tsup": "^6.7.0",
     "tsx": "^3.12.7",
     "typescript": "^5.0.4",
+    "unified": "^10.1.2",
     "vitest": "^0.31.0"
   }
 }
