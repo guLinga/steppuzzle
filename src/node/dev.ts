@@ -4,6 +4,7 @@ import pluginReact from '@vitejs/plugin-react'; // 保持组件状态
 import { PACKAGE_ROOT } from './constants';
 import { resolveConfig } from './config';
 import { pluginConfig } from './plugin-steppuzzle/config';
+import { pluginRoutes } from './plugin-routes';
 
 export async function createDevServer(
   root = process.cwd(),
@@ -14,8 +15,13 @@ export async function createDevServer(
     root: PACKAGE_ROOT,
     plugins: [
       pluginIndexHtml(),
-      pluginReact(),
-      pluginConfig(siteConfig, restartServer)
+      pluginReact({
+        jsxRuntime: 'automatic'
+      }),
+      pluginConfig(siteConfig, restartServer),
+      pluginRoutes({
+        root: siteConfig.root
+      })
     ],
     server: {
       fs: {
