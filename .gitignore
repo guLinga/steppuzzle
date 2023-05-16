@@ -1,3 +1,4 @@
 node_modules
 dist
 docs/build
+docs/.temp
