@@ -6,14 +6,13 @@ import fs from 'fs-extra';
 import ora from 'ora';
 import { pathToFileURL } from 'url';
 import { SiteConfig } from '../shared/types';
-import pluginReact from '@vitejs/plugin-react';
-import { pluginConfig } from './plugin-steppuzzle/config';
+import { createVitePlugins } from './vitePlugins';
 
 export async function bundle(root: string, config: SiteConfig) {
   const resolveViteConfig = (isServer: boolean): InlineConfig => ({
     mode: 'production',
     root,
-    plugins: [pluginReact(), pluginConfig(config)],
+    plugins: createVitePlugins(config),
     ssr: {
       noExternal: ['react-router-dom'] // 将 react-router-dom 打包进 chunk 中，这样避免打包后引入错误
     },
