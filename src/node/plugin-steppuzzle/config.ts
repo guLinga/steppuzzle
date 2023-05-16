@@ -36,7 +36,6 @@ export function pluginConfig(
       const include = (id: string) =>
         customWatchedFiles.some((file) => id.includes(file));
 
-      console.log('ctx', ctx.file, config.configPath, include(ctx.file));
       // debugger;
       if (include(ctx.file)) {
         console.log(
