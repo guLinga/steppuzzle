@@ -21,6 +21,12 @@ A note[^1]
 
 ~one~ or ~~two~~ tildes.
 
+## code
+```js
+let n = 1;
+console.log(n);
+```
+
 ## Table
 
 | a   | b   |   c |  d  |

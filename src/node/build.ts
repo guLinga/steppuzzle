@@ -9,10 +9,12 @@ import { SiteConfig } from '../shared/types';
 import { createVitePlugins } from './vitePlugins';
 
 export async function bundle(root: string, config: SiteConfig) {
-  const resolveViteConfig = (isServer: boolean): InlineConfig => ({
+  const resolveViteConfig = async (
+    isServer: boolean
+  ): Promise<InlineConfig> => ({
     mode: 'production',
     root,
-    plugins: createVitePlugins(config),
+    plugins: await createVitePlugins(config),
     ssr: {
       noExternal: ['react-router-dom'] // 将 react-router-dom 打包进 chunk 中，这样避免打包后引入错误
     },
@@ -35,9 +37,9 @@ export async function bundle(root: string, config: SiteConfig) {
     // viteBuild 类似于 vite build 命令
     const [clientBundle, serverBundle] = await Promise.all([
       // client build
-      viteBuild(resolveViteConfig(false)),
+      viteBuild(await resolveViteConfig(false)),
       // server build
-      viteBuild(resolveViteConfig(true))
+      viteBuild(await resolveViteConfig(true))
     ]);
     spinner.stop();
     return [clientBundle, serverBundle] as [RollupOutput, RollupOutput];
