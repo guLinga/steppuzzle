@@ -19,11 +19,17 @@
 ## 功能
 
 ⚡️React18，[Vite4](https://github.com/vitejs/vite)，[pnpm](https://pnpm.js.org/), [ESBuild](https://github.com/evanw/esbuild)
+
 🔥 配置 & Markdown 文件热更新
+
 🔧config.ts 的所有配置项皆有类型提示，并支持 config.js
+
 🗒 Markdown 文件支持 .md 和 .mdx 后缀
+
 ⚙️ Unit 测试 with [Vitese](https://github.com/vitest-dev/vitest)
+
 💡UI 测试 with [playwright](https://github.com/microsoft/playwright)
+
 🏷️ 静态站点生成 (SSG) by vite-ssg and vite-ssr（支持单页面应用！）
 
 ## 致谢

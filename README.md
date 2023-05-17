@@ -19,11 +19,17 @@ The first version is currently in progress and has not yet been released
 ## Features
 
 ⚡️React18，[Vite4](https://github.com/vitejs/vite)，[pnpm](https://pnpm.js.org/), [ESBuild](https://github.com/evanw/esbuild)
+
 🔥 Hot Reload with Config & Markdown
+
 🔧Type Tooltip for all config by `config.ts` and support `config.js`
+
 🗒 Markdown files support the.md and.mdx suffixes
+
 ⚙️ Unit Testing with [Vitese](https://github.com/vitest-dev/vitest)
+
 💡UI Testing with [playwright](https://github.com/microsoft/playwright)
+
 🏷️ Static site generation (SSG) by vite-ssg and vite ssr(Support single page application!)
 
 ## Thanks
