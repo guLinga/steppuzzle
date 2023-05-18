@@ -3,6 +3,13 @@ import { RouteService } from './RouteService';
 
 interface PluginOptions {
   root: string;
+  isSSR: boolean;
+}
+
+export interface Route {
+  path: string;
+  element: React.ReactElement;
+  filePath: string;
 }
 
 export const CONVENTIONAL_ROUTE_ID = 'steppuzzle:routes';
@@ -21,7 +28,7 @@ export function pluginRoutes(options: PluginOptions): Plugin {
     },
     load(id) {
       if (id === '\0' + CONVENTIONAL_ROUTE_ID) {
-        return routerService.generateRoutesCode();
+        return routerService.generateRoutesCode(options.isSSR || false);
       }
     }
   };

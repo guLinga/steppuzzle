@@ -36,13 +36,15 @@ export class RouteService {
       });
     });
   }
-  generateRoutesCode() {
+  generateRoutesCode(ssr: boolean) {
     return `
       import React from 'react'
-      import loadable from '@loadable/component'
+      ${ssr ? '' : 'import loadable from "@loadable/component";'}
       ${this.#routeData
         .map((route, index) => {
-          return `const Route${index} = loadable(() => import('${route.absoultePath}'));`;
+          return ssr
+            ? `import Route${index} from "${route.absoultePath}";`
+            : `const Route${index} = loadable(() => import('${route.absoultePath}'));`;
         })
         .join('\n')}
       export const routes = [

@@ -8,7 +8,8 @@ import { Plugin } from 'vite';
 
 export async function createVitePlugins(
   siteConfig: SiteConfig,
-  restartServer?: () => Promise<void>
+  restartServer?: () => Promise<void>,
+  isSSR = false
 ) {
   return [
     pluginIndexHtml(),
@@ -17,7 +18,8 @@ export async function createVitePlugins(
     }),
     pluginConfig(siteConfig, restartServer),
     pluginRoutes({
-      root: siteConfig.root
+      root: siteConfig.root,
+      isSSR
     }),
     await PluginMdx()
   ] as Plugin[];
