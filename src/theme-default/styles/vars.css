@@ -6,8 +6,9 @@
  * instead because those are "Theme (light or dark)" dependant.
  * -------------------------------------------------------------------------- */
 
- :root {
+:root {
   --steppuzzle-c-white: #ffffff;
+  --steppuzzle-aside-width: 268px;
   --steppuzzle-c-white-soft: #f9f9f9;
   --steppuzzle-c-white-mute: #f1f1f1;
 
@@ -146,7 +147,8 @@
   --steppuzzle-font-family-base: 'Inter var experimental', 'Inter var',
     -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu,
     Cantarell, 'Fira Sans', 'Droid Sans', 'Helvetica Neue', sans-serif;
-  --steppuzzle-font-family-mono: Menlo, Monaco, Consolas, 'Courier New', monospace;
+  --steppuzzle-font-family-mono: Menlo, Monaco, Consolas, 'Courier New',
+    monospace;
 }
 
 /**
@@ -283,12 +285,16 @@
   --steppuzzle-custom-block-warning-border: var(--steppuzzle-c-yellow-dimm-1);
   --steppuzzle-custom-block-warning-text: var(--steppuzzle-c-yellow-darker);
   --steppuzzle-custom-block-warning-bg: var(--steppuzzle-c-yellow-dimm-3);
-  --steppuzzle-custom-block-warning-code-bg: var(--steppuzzle-custom-block-warning-bg);
+  --steppuzzle-custom-block-warning-code-bg: var(
+    --steppuzzle-custom-block-warning-bg
+  );
 
   --steppuzzle-custom-block-danger-border: var(--steppuzzle-c-red-dimm-1);
   --steppuzzle-custom-block-danger-text: var(--steppuzzle-c-red-darker);
   --steppuzzle-custom-block-danger-bg: var(--steppuzzle-c-red-dimm-3);
-  --steppuzzle-custom-block-danger-code-bg: var(--steppuzzle-custom-block-danger-bg);
+  --steppuzzle-custom-block-danger-code-bg: var(
+    --steppuzzle-custom-block-danger-bg
+  );
 }
 
 .dark {

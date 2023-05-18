@@ -1,0 +1,405 @@
+/**
+ * Headings
+ * -------------------------------------------------------------------------- */
+
+ .steppuzzle-doc h1,
+ .steppuzzle-doc h2,
+ .steppuzzle-doc h3,
+ .steppuzzle-doc h4,
+ .steppuzzle-doc h5,
+ .steppuzzle-doc h6 {
+   position: relative;
+   font-weight: 600;
+   outline: none;
+ }
+ 
+ .steppuzzle-doc h1 {
+   letter-spacing: -0.02em;
+   line-height: 40px;
+   font-size: 28px;
+   margin-bottom: 40px;
+ }
+ 
+ .steppuzzle-doc h2 {
+   margin: 48px 0 16px;
+   /* padding-top: 24px; */
+   letter-spacing: -0.02em;
+   line-height: 32px;
+   font-size: 24px;
+ }
+ 
+ .steppuzzle-doc h3 {
+   margin: 32px 0 0;
+   letter-spacing: -0.01em;
+   line-height: 28px;
+   font-size: 20px;
+ }
+ 
+ .steppuzzle-doc .header-anchor {
+   float: left;
+   margin-left: -0.87em;
+   padding-right: 0.23em;
+   font-weight: 500;
+   opacity: 0;
+   transition: color 0.25s, opacity 0.25s;
+ }
+ 
+ .steppuzzle-doc h1:hover .header-anchor,
+ .steppuzzle-doc h1 .header-anchor:focus,
+ .steppuzzle-doc h2:hover .header-anchor,
+ .steppuzzle-doc h2 .header-anchor:focus,
+ .steppuzzle-doc h3:hover .header-anchor,
+ .steppuzzle-doc h3 .header-anchor:focus,
+ .steppuzzle-doc h4:hover .header-anchor,
+ .steppuzzle-doc h4 .header-anchor:focus,
+ .steppuzzle-doc h5:hover .header-anchor,
+ .steppuzzle-doc h5 .header-anchor:focus,
+ .steppuzzle-doc h6:hover .header-anchor,
+ .steppuzzle-doc h6 .header-anchor:focus {
+   opacity: 1;
+ }
+ 
+ @media (min-width: 768px) {
+   .steppuzzle-doc h1 {
+     letter-spacing: -0.02em;
+     line-height: 40px;
+     font-size: 32px;
+   }
+ }
+ 
+ /**
+    * Paragraph and inline elements
+    * -------------------------------------------------------------------------- */
+ 
+ .steppuzzle-doc p,
+ .steppuzzle-doc summary {
+   margin: 16px 0;
+ }
+ 
+ .steppuzzle-doc p {
+   z-index: 2;
+   line-height: 28px;
+ }
+ 
+ .steppuzzle-doc blockquote {
+   margin: 16px 0;
+   border-left: 2px solid var(--steppuzzle-c-divider);
+   padding-left: 16px;
+   transition: border-color 0.5s;
+ }
+ 
+ .steppuzzle-doc blockquote > p {
+   margin: 0;
+   font-size: 16px;
+   color: var(--steppuzzle-c-text-2);
+   transition: color 0.5s;
+ }
+ 
+ .steppuzzle-doc a {
+   font-weight: 500;
+   color: var(--steppuzzle-c-brand);
+   text-decoration-style: dotted;
+   transition: color 0.25s;
+ }
+ 
+ .steppuzzle-doc a:hover {
+   color: var(--steppuzzle-c-brand-dark);
+ }
+ 
+ .steppuzzle-doc strong {
+   font-weight: 600;
+ }
+ 
+ /**
+    * Lists
+    * -------------------------------------------------------------------------- */
+ 
+ .steppuzzle-doc ul,
+ .steppuzzle-doc ol {
+   padding-left: 1.25rem;
+   margin: 16px 0;
+ }
+ 
+ .steppuzzle-doc ul {
+   list-style: disc;
+ }
+ 
+ .steppuzzle-doc ol {
+   list-style: decimal;
+ }
+ 
+ .steppuzzle-doc li + li {
+   margin-top: 8px;
+ }
+ 
+ .steppuzzle-doc li > ol,
+ .steppuzzle-doc li > ul {
+   margin: 8px 0 0;
+ }
+ 
+ /**
+    * Table
+    * -------------------------------------------------------------------------- */
+ 
+ .steppuzzle-doc table {
+   display: block;
+   border-collapse: collapse;
+   margin: 20px 0;
+   overflow-x: auto;
+ }
+ 
+ .steppuzzle-doc tr {
+   border-top: 1px solid var(--steppuzzle-c-divider);
+   transition: background-color 0.5s;
+ }
+ 
+ .steppuzzle-doc tr:nth-child(2n) {
+   background-color: var(--steppuzzle-c-bg-soft);
+ }
+ 
+ .steppuzzle-doc th,
+ .steppuzzle-doc td {
+   border: 1px solid var(--steppuzzle-c-divider);
+   padding: 12px 16px;
+ }
+ 
+ .steppuzzle-doc th {
+   font-size: 16px;
+   font-weight: 600;
+   background-color: var(--steppuzzle-c-white-soft);
+ }
+ 
+ .dark .steppuzzle-doc th {
+   background-color: var(--steppuzzle-c-black);
+ }
+ 
+ /**
+    * Decorational elements
+    * -------------------------------------------------------------------------- */
+ 
+ .steppuzzle-doc hr {
+   margin: 16px 0;
+   border: none;
+   border-top: 1px solid var(--steppuzzle-c-divider-light);
+ }
+ 
+ /**
+    * Custom Block
+    * -------------------------------------------------------------------------- */
+ 
+ .steppuzzle-doc .custom-block {
+   margin: 16px 0;
+ }
+ 
+ .steppuzzle-doc .custom-block p {
+   margin: 8px 0;
+   line-height: 24px;
+ }
+ 
+ .steppuzzle-doc .custom-block p:first-child {
+   margin: 0;
+ }
+ 
+ .steppuzzle-doc .custom-block a {
+   color: inherit;
+   font-weight: 600;
+   text-decoration: underline;
+   transition: opacity 0.25s;
+ }
+ 
+ .steppuzzle-doc .custom-block a:hover {
+   opacity: 0.6;
+ }
+ 
+ .steppuzzle-doc .custom-block code {
+   font-size: var(--steppuzzle-custom-block-code-font-size);
+   font-weight: 700;
+   color: inherit;
+ }
+ 
+ .steppuzzle-doc .custom-block div[class*='language-'] {
+   margin: 8px 0;
+ }
+ 
+ .steppuzzle-doc .custom-block div[class*='language-'] code {
+   font-weight: 400;
+   background-color: transparent;
+ }
+ 
+ /**
+    * Code
+    * -------------------------------------------------------------------------- */
+ 
+ /* inline code */
+ .steppuzzle-doc :not(pre, h1, h2, h3, h4, h5, h6) > code {
+   font-size: var(--steppuzzle-code-font-size);
+ }
+ 
+ .steppuzzle-doc :not(pre, div) > code {
+   border-radius: 4px;
+   padding: 3px 6px;
+   color: var(--steppuzzle-c-text-code);
+   background-color: var(--steppuzzle-c-bg-mute);
+   transition: color 0.5s, background-color 0.5s;
+ }
+ 
+ .steppuzzle-doc h1 > code,
+ .steppuzzle-doc h2 > code,
+ .steppuzzle-doc h3 > code {
+   font-size: 0.9em;
+ }
+ 
+ .steppuzzle-doc a > code {
+   color: var(--steppuzzle-c-brand);
+   transition: color 0.25s;
+ }
+ 
+ .steppuzzle-doc a:hover > code {
+   color: var(--steppuzzle-c-brand-dark);
+ }
+ 
+ .steppuzzle-doc div[class*='language-'] {
+   position: relative;
+   margin: 16px -24px;
+   background-color: var(--steppuzzle-code-block-bg);
+   overflow-x: auto;
+   transition: background-color 0.5s;
+ }
+ 
+ @media (min-width: 640px) {
+   .steppuzzle-doc div[class*='language-'] {
+     border-radius: 8px;
+     margin: 16px 0;
+   }
+ }
+ 
+ @media (max-width: 639px) {
+   .steppuzzle-doc li div[class*='language-'] {
+     border-radius: 8px 0 0 8px;
+   }
+ }
+ 
+ .steppuzzle-doc div[class*='language-'] + div[class*='language-'],
+ .steppuzzle-doc div[class$='-api'] + div[class*='language-'],
+ .steppuzzle-doc
+   div[class*='language-']
+   + div[class$='-api']
+   > div[class*='language-'] {
+   margin-top: -8px;
+ }
+ 
+ .steppuzzle-doc [class*='language-'] pre,
+ .steppuzzle-doc [class*='language-'] code {
+   text-align: left;
+   white-space: pre;
+   word-spacing: normal;
+   word-break: normal;
+   word-wrap: normal;
+   -moz-tab-size: 4;
+   -o-tab-size: 4;
+   tab-size: 4;
+   -webkit-hyphens: none;
+   -moz-hyphens: none;
+   -ms-hyphens: none;
+   hyphens: none;
+ }
+ 
+ .steppuzzle-doc [class*='language-'] pre {
+   position: relative;
+   z-index: 1;
+   margin: 0;
+   padding: 16px 0;
+   background: transparent;
+   overflow-x: auto;
+ }
+ 
+ .steppuzzle-doc [class*='language-'] code {
+   display: block;
+   padding: 0 24px;
+   width: fit-content;
+   min-width: 100%;
+   line-height: var(--steppuzzle-code-line-height);
+   font-size: var(--steppuzzle-code-font-size);
+   color: var(--steppuzzle-code-block-color);
+   transition: color 0.5s;
+ }
+ 
+ .steppuzzle-doc [class*='language-'] code .highlighted {
+   background-color: var(--steppuzzle-code-line-highlight-color);
+   transition: background-color 0.5s;
+   margin: 0 -24px;
+   padding: 0 24px;
+   width: calc(100% + 2 * 24px);
+   display: inline-block;
+ }
+ 
+ .steppuzzle-doc [class*='language-'] > button.copy {
+   position: absolute;
+   top: 8px;
+   right: 8px;
+   z-index: 3;
+   display: block;
+   justify-content: center;
+   align-items: center;
+   border-radius: 4px;
+   width: 40px;
+   height: 40px;
+   background-color: var(--steppuzzle-code-block-bg);
+   opacity: 0;
+   cursor: pointer;
+   background-image: var(--steppuzzle-icon-copy);
+   background-position: 50%;
+   background-size: 20px;
+   background-repeat: no-repeat;
+   transition: opacity 0.4s;
+ }
+ 
+ .steppuzzle-doc [class*='language-']:hover > button.copy,
+ .steppuzzle-doc [class*='language-'] > button.copy:focus {
+   opacity: 1;
+ }
+ 
+ .steppuzzle-doc [class*='language-'] > button.copy:hover {
+   background-color: var(--steppuzzle-code-copy-code-hover-bg);
+ }
+ 
+ .steppuzzle-doc [class*='language-'] > button.copy.copied,
+ .steppuzzle-doc [class*='language-'] > button.copy:hover.copied {
+   border-radius: 0 4px 4px 0;
+   background-color: var(--steppuzzle-code-copy-code-hover-bg);
+   background-image: var(--steppuzzle-icon-copied);
+ }
+ 
+ .steppuzzle-doc [class*='language-'] > button.copy.copied::before,
+ .steppuzzle-doc [class*='language-'] > button.copy:hover.copied::before {
+   position: relative;
+   left: -65px;
+   display: block;
+   border-radius: 4px 0 0 4px;
+   padding-top: 8px;
+   width: 64px;
+   height: 40px;
+   text-align: center;
+   font-size: 12px;
+   font-weight: 500;
+   color: var(--steppuzzle-code-copy-code-active-text);
+   background-color: var(--steppuzzle-code-copy-code-hover-bg);
+   white-space: nowrap;
+   content: 'Copied';
+ }
+ 
+ .steppuzzle-doc [class*='language-'] > span.lang {
+   position: absolute;
+   top: 6px;
+   right: 12px;
+   z-index: 2;
+   font-size: 12px;
+   font-weight: 500;
+   color: var(--steppuzzle-c-text-dark-3);
+   transition: color 0.4s, opacity 0.4s;
+ }
+ 
+ .steppuzzle-doc [class*='language-']:hover > button.copy + span.lang,
+ .steppuzzle-doc [class*='language-'] > button.copy:focus + span.lang {
+   opacity: 0;
+ }

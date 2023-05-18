@@ -19,6 +19,14 @@ export default defaultConfig({
             {
               text: '如何安装',
               link: '/guide/b'
+            },
+            {
+              text: '注意事项',
+              link: '/guide/c'
+            },
+            {
+              text: 'test',
+              link: '/guide/test'
             }
           ]
         }
