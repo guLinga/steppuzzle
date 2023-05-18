@@ -1,0 +1,356 @@
+/**
+ * Colors Base
+ *
+ * These are the pure base color presets. Most of the time, you should not be
+ * using these colors directly in the theme but rather use "Colors Theme"
+ * instead because those are "Theme (light or dark)" dependant.
+ * -------------------------------------------------------------------------- */
+
+ :root {
+  --steppuzzle-c-white: #ffffff;
+  --steppuzzle-c-white-soft: #f9f9f9;
+  --steppuzzle-c-white-mute: #f1f1f1;
+
+  --steppuzzle-c-black: #1a1a1a;
+  --steppuzzle-c-black-pure: #000000;
+  --steppuzzle-c-black-soft: #242424;
+  --steppuzzle-c-black-mute: #2f2f2f;
+
+  --steppuzzle-c-gray: #8e8e8e;
+  --steppuzzle-c-gray-light-1: #aeaeae;
+  --steppuzzle-c-gray-light-2: #c7c7c7;
+  --steppuzzle-c-gray-light-3: #d1d1d1;
+  --steppuzzle-c-gray-light-4: #e5e5e5;
+  --steppuzzle-c-gray-light-5: #f2f2f2;
+  --steppuzzle-c-gray-dark-1: #636363;
+  --steppuzzle-c-gray-dark-2: #484848;
+  --steppuzzle-c-gray-dark-3: #3a3a3a;
+  --steppuzzle-c-gray-dark-4: #282828;
+  --steppuzzle-c-gray-dark-5: #202020;
+
+  --steppuzzle-c-divider-light-1: rgba(60, 60, 60, 0.29);
+  --steppuzzle-c-divider-light-2: rgba(60, 60, 60, 0.12);
+  --steppuzzle-c-divider-dark-1: rgba(84, 84, 84, 0.65);
+  --steppuzzle-c-divider-dark-2: rgba(84, 84, 84, 0.48);
+
+  --steppuzzle-c-indigo: #213547;
+  --steppuzzle-c-indigo-soft: #476582;
+  --steppuzzle-c-indigo-light: #aac8e4;
+  --steppuzzle-c-indigo-lighter: #c9def1;
+  --steppuzzle-c-indigo-dark: #1d2f3f;
+  --steppuzzle-c-indigo-darker: #14212e;
+
+  --steppuzzle-c-text-light-1: var(--steppuzzle-c-indigo);
+  --steppuzzle-c-text-light-2: rgba(60, 60, 60, 0.7);
+  --steppuzzle-c-text-light-3: rgba(60, 60, 60, 0.33);
+  --steppuzzle-c-text-light-4: rgba(60, 60, 60, 0.18);
+
+  --steppuzzle-c-text-dark-1: rgba(255, 255, 255, 0.87);
+  --steppuzzle-c-text-dark-2: rgba(235, 235, 235, 0.6);
+  --steppuzzle-c-text-dark-3: rgba(235, 235, 235, 0.38);
+  --steppuzzle-c-text-dark-4: rgba(235, 235, 235, 0.18);
+
+  --steppuzzle-c-green: #21b8a3;
+  --steppuzzle-c-green-light: #41c6b0;
+  --steppuzzle-c-green-lighter: #41c6b0;
+  --steppuzzle-c-green-dark: #149684;
+  --steppuzzle-c-green-darker: #149684;
+  --steppuzzle-c-green-dimm: #062521;
+
+  --steppuzzle-c-green-dimm-1: rgba(66, 184, 131, 0.5);
+  --steppuzzle-c-green-dimm-2: rgba(66, 184, 131, 0.25);
+  --steppuzzle-c-green-dimm-3: rgba(66, 184, 131, 0.05);
+
+  --steppuzzle-c-blue: #646cff;
+  --steppuzzle-c-blue-light: #747bff;
+  --steppuzzle-c-blue-lighter: #9499ff;
+  --steppuzzle-c-blue-lightest: #bcc0ff;
+  --steppuzzle-c-blue-dark: #535bf2;
+  --steppuzzle-c-blue-darker: #454ce1;
+  --steppuzzle-c-blue-dimm: rgba(100, 108, 255, 0.08);
+
+  --steppuzzle-c-yellow: #ffc517;
+  --steppuzzle-c-yellow-light: #fcd253;
+  --steppuzzle-c-yellow-lighter: #fcfc7c;
+  --steppuzzle-c-yellow-darker: #ad850e;
+  --steppuzzle-c-yellow-dimm-1: rgba(255, 197, 23, 0.5);
+  --steppuzzle-c-yellow-dimm-2: rgba(255, 197, 23, 0.25);
+  --steppuzzle-c-yellow-dimm-3: rgba(255, 197, 23, 0.05);
+
+  --steppuzzle-c-red: #ed3c50;
+  --steppuzzle-c-red-light: #f54e82;
+  --steppuzzle-c-red-lighter: #fd1d7c;
+  --steppuzzle-c-red-darker: #ab2131;
+  --steppuzzle-c-red-dimm-1: rgba(237, 60, 80, 0.5);
+  --steppuzzle-c-red-dimm-2: rgba(237, 60, 80, 0.25);
+  --steppuzzle-c-red-dimm-3: rgba(237, 60, 80, 0.05);
+}
+
+/**
+ * Colors Theme
+ * -------------------------------------------------------------------------- */
+
+:root {
+  --steppuzzle-c-bg: var(--steppuzzle-c-white);
+  --steppuzzle-c-bg-soft: var(--steppuzzle-c-white-soft);
+  --steppuzzle-c-bg-mute: var(--steppuzzle-c-white-mute);
+  --steppuzzle-c-bg-alt: var(--steppuzzle-c-white-soft);
+
+  --steppuzzle-c-divider: var(--steppuzzle-c-divider-light-1);
+  --steppuzzle-c-divider-light: var(--steppuzzle-c-divider-light-2);
+
+  --steppuzzle-c-text-1: var(--steppuzzle-c-text-light-1);
+  --steppuzzle-c-text-2: var(--steppuzzle-c-text-light-2);
+  --steppuzzle-c-text-3: var(--steppuzzle-c-text-light-3);
+  --steppuzzle-c-text-4: var(--steppuzzle-c-text-light-4);
+
+  --steppuzzle-c-text-code: var(--steppuzzle-c-indigo-soft);
+
+  --steppuzzle-c-brand: var(--steppuzzle-c-green);
+  --steppuzzle-c-brand-light: var(--steppuzzle-c-green-light);
+  --steppuzzle-c-brand-lighter: var(--steppuzzle-c-green-lighter);
+  --steppuzzle-c-brand-dark: var(--steppuzzle-c-green-dark);
+  --steppuzzle-c-brand-darker: var(--steppuzzle-c-green-darker);
+}
+
+.dark {
+  --steppuzzle-c-bg: var(--steppuzzle-c-black-soft);
+  --steppuzzle-c-bg-soft: var(--steppuzzle-c-black-mute);
+  --steppuzzle-c-bg-mute: var(--steppuzzle-c-gray-dark-3);
+  --steppuzzle-c-bg-alt: var(--steppuzzle-c-black);
+
+  --steppuzzle-c-divider: var(--steppuzzle-c-divider-dark-1);
+  --steppuzzle-c-divider-light: var(--steppuzzle-c-divider-dark-2);
+
+  --steppuzzle-c-divider-inverse: var(--steppuzzle-c-divider-light-1);
+  --steppuzzle-c-divider-inverse-light: var(--steppuzzle-c-divider-light-2);
+
+  --steppuzzle-c-text-1: var(--steppuzzle-c-text-dark-1);
+  --steppuzzle-c-text-2: var(--steppuzzle-c-text-dark-2);
+  --steppuzzle-c-text-3: var(--steppuzzle-c-text-dark-3);
+  --steppuzzle-c-text-4: var(--steppuzzle-c-text-dark-4);
+
+  --steppuzzle-c-text-inverse-1: var(--steppuzzle-c-text-light-1);
+  --steppuzzle-c-text-inverse-2: var(--steppuzzle-c-text-light-2);
+  --steppuzzle-c-text-inverse-3: var(--steppuzzle-c-text-light-3);
+  --steppuzzle-c-text-inverse-4: var(--steppuzzle-c-text-light-4);
+
+  --steppuzzle-c-text-code: var(--steppuzzle-c-indigo-lighter);
+}
+
+/**
+ * Typography
+ * -------------------------------------------------------------------------- */
+
+:root {
+  --steppuzzle-font-family-base: 'Inter var experimental', 'Inter var',
+    -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu,
+    Cantarell, 'Fira Sans', 'Droid Sans', 'Helvetica Neue', sans-serif;
+  --steppuzzle-font-family-mono: Menlo, Monaco, Consolas, 'Courier New', monospace;
+}
+
+/**
+ * Layouts
+ * -------------------------------------------------------------------------- */
+
+:root {
+  --steppuzzle-layout-max-width: 1440px;
+}
+
+/**
+ * Component: Code
+ * -------------------------------------------------------------------------- */
+
+:root {
+  --steppuzzle-code-line-height: 1.7;
+  --steppuzzle-code-font-size: 0.875em;
+
+  --steppuzzle-code-block-color: var(--steppuzzle-c-text-dark-1);
+  --steppuzzle-code-block-bg: #292d3e;
+
+  --steppuzzle-code-line-highlight-color: rgba(0, 0, 0, 0.5);
+  --steppuzzle-code-line-number-color: var(--steppuzzle-c-text-dark-3);
+
+  --steppuzzle-code-copy-code-hover-bg: rgba(255, 255, 255, 0.05);
+  --steppuzzle-code-copy-code-active-text: var(--steppuzzle-c-text-dark-2);
+}
+
+/**
+ * Icons
+ * -------------------------------------------------------------------------- */
+
+:root {
+  --steppuzzle-icon-copy: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' fill='none' height='20' width='20' stroke='rgba(128,128,128,1)' stroke-width='2' viewBox='0 0 24 24'%3E%3Cpath stroke-linecap='round' stroke-linejoin='round' d='M9 5H7a2 2 0 0 0-2 2v12a2 2 0 0 0 2 2h10a2 2 0 0 0 2-2V7a2 2 0 0 0-2-2h-2M9 5a2 2 0 0 0 2 2h2a2 2 0 0 0 2-2M9 5a2 2 0 0 1 2-2h2a2 2 0 0 1 2 2'/%3E%3C/svg%3E");
+  --steppuzzle-icon-copied: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' fill='none' height='20' width='20' stroke='rgba(128,128,128,1)' stroke-width='2' viewBox='0 0 24 24'%3E%3Cpath stroke-linecap='round' stroke-linejoin='round' d='M9 5H7a2 2 0 0 0-2 2v12a2 2 0 0 0 2 2h10a2 2 0 0 0 2-2V7a2 2 0 0 0-2-2h-2M9 5a2 2 0 0 0 2 2h2a2 2 0 0 0 2-2M9 5a2 2 0 0 1 2-2h2a2 2 0 0 1 2 2m-6 9 2 2 4-4'/%3E%3C/svg%3E");
+  --steppuzzle-icon-tip: url("data:image/svg+xml,%3Csvg width='20' height='20' viewBox='0 0 1024 1024' xmlns='http://www.w3.org/2000/svg'%3E%3Cpath d='M512 960C264.58 960 64 759.42 64 512S264.58 64 512 64s448 200.58 448 448-200.58 448-448 448z m0-832c-212.08 0-384 171.92-384 384s171.92 384 384 384 384-171.92 384-384-171.92-384-384-384z m0 112c-26.51 0-48 21.49-48 48s21.49 48 48 48 48-21.49 48-48-21.49-48-48-48z m0 160c-17.67 0-32 14.33-32 32v320c0 17.67 14.33 32 32 32 17.67 0 32-14.33 32-32V432c0-17.67-14.33-32-32-32z' fill='%2321b8a3'/%3E%3C/svg%3E");
+}
+
+.dark {
+  --steppuzzle-code-block-bg: var(--steppuzzle-c-bg-alt);
+}
+
+/**
+ * Z-indexes
+ * -------------------------------------------------------------------------- */
+
+:root {
+  --steppuzzle-z-index-local-nav: 10;
+  --steppuzzle-z-index-nav: 20;
+  --steppuzzle-z-index-layout-top: 30;
+  --steppuzzle-z-index-backdrop: 40;
+  --steppuzzle-z-index-sidebar: 50;
+  --steppuzzle-z-index-footer: 60;
+}
+
+/**
+ * Component: Button
+ * -------------------------------------------------------------------------- */
+
+:root {
+  --steppuzzle-button-brand-border: var(--steppuzzle-c-brand-light);
+  --steppuzzle-button-brand-text: var(--steppuzzle-c-text-dark-1);
+  --steppuzzle-button-brand-bg: var(--steppuzzle-c-brand);
+  --steppuzzle-button-brand-hover-border: var(--steppuzzle-c-brand-light);
+  --steppuzzle-button-brand-hover-text: var(--steppuzzle-c-text-dark-1);
+  --steppuzzle-button-brand-hover-bg: var(--steppuzzle-c-brand-light);
+  --steppuzzle-button-brand-active-border: var(--steppuzzle-c-brand-light);
+  --steppuzzle-button-brand-active-text: var(--steppuzzle-c-text-dark-1);
+  --steppuzzle-button-brand-active-bg: var(--steppuzzle-button-brand-bg);
+
+  --steppuzzle-button-alt-border: var(--steppuzzle-c-gray-light-3);
+  --steppuzzle-button-alt-text: var(--steppuzzle-c-text-light-1);
+  --steppuzzle-button-alt-bg: var(--steppuzzle-c-gray-light-5);
+  --steppuzzle-button-alt-hover-border: var(--steppuzzle-c-gray-light-3);
+  --steppuzzle-button-alt-hover-text: var(--steppuzzle-c-text-light-1);
+  --steppuzzle-button-alt-hover-bg: var(--steppuzzle-c-gray-light-4);
+  --steppuzzle-button-alt-active-border: var(--steppuzzle-c-gray-light-3);
+  --steppuzzle-button-alt-active-text: var(--steppuzzle-c-text-light-1);
+  --steppuzzle-button-alt-active-bg: var(--steppuzzle-c-gray-light-3);
+
+  --steppuzzle-button-sponsor-border: var(--steppuzzle-c-gray-light-3);
+  --steppuzzle-button-sponsor-text: var(--steppuzzle-c-text-light-2);
+  --steppuzzle-button-sponsor-bg: transparent;
+  --steppuzzle-button-sponsor-hover-border: var(--steppuzzle-c-sponsor);
+  --steppuzzle-button-sponsor-hover-text: var(--steppuzzle-c-sponsor);
+  --steppuzzle-button-sponsor-hover-bg: transparent;
+  --steppuzzle-button-sponsor-active-border: var(--steppuzzle-c-sponsor);
+  --steppuzzle-button-sponsor-active-text: var(--steppuzzle-c-sponsor);
+  --steppuzzle-button-sponsor-active-bg: transparent;
+}
+
+.dark {
+  --steppuzzle-button-brand-border: var(--steppuzzle-c-brand-light);
+  --steppuzzle-button-brand-text: var(--steppuzzle-c-text-dark-1);
+  --steppuzzle-button-brand-bg: var(--steppuzzle-c-brand-dark);
+  --steppuzzle-button-brand-hover-border: var(--steppuzzle-c-brand-lighter);
+  --steppuzzle-button-brand-hover-text: var(--steppuzzle-c-text-dark-1);
+  --steppuzzle-button-brand-hover-bg: var(--steppuzzle-c-brand);
+  --steppuzzle-button-brand-active-border: var(--steppuzzle-c-brand-lighter);
+  --steppuzzle-button-brand-active-text: var(--steppuzzle-c-text-dark-1);
+  --steppuzzle-button-brand-active-bg: var(--steppuzzle-button-brand-bg);
+
+  --steppuzzle-button-alt-border: var(--steppuzzle-c-gray-dark-2);
+  --steppuzzle-button-alt-text: var(--steppuzzle-c-text-dark-1);
+  --steppuzzle-button-alt-bg: var(--steppuzzle-c-bg-mute);
+  --steppuzzle-button-alt-hover-border: var(--steppuzzle-c-gray-dark-2);
+  --steppuzzle-button-alt-hover-text: var(--steppuzzle-c-text-dark-1);
+  --steppuzzle-button-alt-hover-bg: var(--steppuzzle-c-gray-dark-2);
+  --steppuzzle-button-alt-active-border: var(--steppuzzle-c-gray-dark-2);
+  --steppuzzle-button-alt-active-text: var(--steppuzzle-c-text-dark-1);
+  --steppuzzle-button-alt-active-bg: var(--steppuzzle-button-alt-bg);
+
+  --steppuzzle-button-sponsor-border: var(--steppuzzle-c-gray-dark-1);
+  --steppuzzle-button-sponsor-text: var(--steppuzzle-c-text-dark-2);
+}
+
+/**
+ * Component: Custom Block
+ * -------------------------------------------------------------------------- */
+
+:root {
+  --steppuzzle-custom-block-code-font-size: 13px;
+
+  --steppuzzle-custom-block-info-border: var(--steppuzzle-c-divider-light);
+  --steppuzzle-custom-block-info-text: var(--steppuzzle-c-text-2);
+  --steppuzzle-custom-block-info-bg: var(--steppuzzle-c-white-soft);
+  --steppuzzle-custom-block-info-code-bg: var(--steppuzzle-c-gray-light-4);
+
+  --steppuzzle-custom-block-tip-border: var(--steppuzzle-c-green-dimm-1);
+  --steppuzzle-custom-block-tip-text: var(--steppuzzle-c-green-darker);
+  --steppuzzle-custom-block-tip-bg: var(--steppuzzle-c-green-dimm-3);
+  --steppuzzle-custom-block-tip-code-bg: var(--steppuzzle-custom-block-tip-bg);
+
+  --steppuzzle-custom-block-warning-border: var(--steppuzzle-c-yellow-dimm-1);
+  --steppuzzle-custom-block-warning-text: var(--steppuzzle-c-yellow-darker);
+  --steppuzzle-custom-block-warning-bg: var(--steppuzzle-c-yellow-dimm-3);
+  --steppuzzle-custom-block-warning-code-bg: var(--steppuzzle-custom-block-warning-bg);
+
+  --steppuzzle-custom-block-danger-border: var(--steppuzzle-c-red-dimm-1);
+  --steppuzzle-custom-block-danger-text: var(--steppuzzle-c-red-darker);
+  --steppuzzle-custom-block-danger-bg: var(--steppuzzle-c-red-dimm-3);
+  --steppuzzle-custom-block-danger-code-bg: var(--steppuzzle-custom-block-danger-bg);
+}
+
+.dark {
+  --steppuzzle-custom-block-info-border: var(--steppuzzle-c-divider-light);
+  --steppuzzle-custom-block-info-bg: var(--steppuzzle-c-black-mute);
+  --steppuzzle-custom-block-info-code-bg: var(--steppuzzle-c-gray-dark-4);
+
+  --steppuzzle-custom-block-tip-border: var(--steppuzzle-c-green-dimm-2);
+  --steppuzzle-custom-block-tip-text: var(--steppuzzle-c-green-light);
+
+  --steppuzzle-custom-block-warning-border: var(--steppuzzle-c-yellow-dimm-2);
+  --steppuzzle-custom-block-warning-text: var(--steppuzzle-c-yellow-light);
+
+  --steppuzzle-custom-block-danger-border: var(--steppuzzle-c-red-dimm-2);
+  --steppuzzle-custom-block-danger-text: var(--steppuzzle-c-red-light);
+}
+
+/**
+ * Component: Nav
+ * -------------------------------------------------------------------------- */
+
+:root {
+  --steppuzzle-nav-height: 56px;
+}
+
+/**
+ * Component: Sidebar
+ * -------------------------------------------------------------------------- */
+
+:root {
+  --steppuzzle-sidebar-width: 272px;
+}
+
+/**
+ * Component: Home
+ * -------------------------------------------------------------------------- */
+
+:root {
+  --steppuzzle-home-hero-name-color: transparent;
+  --steppuzzle-home-hero-name-background: -webkit-linear-gradient(
+    120deg,
+    var(--steppuzzle-c-brand) 30%,
+    #41d1ff
+  );
+
+  --steppuzzle-home-hero-image-background-image: none;
+  --steppuzzle-home-hero-image-filter: none;
+}
+
+/**
+ * Shadows
+ * -------------------------------------------------------------------------- */
+
+:root {
+  --steppuzzle-shadow-1: 0 1px 2px rgba(0, 0, 0, 0.04),
+    0 1px 2px rgba(0, 0, 0, 0.06);
+  --steppuzzle-shadow-2: 0 3px 12px rgba(0, 0, 0, 0.07),
+    0 1px 4px rgba(0, 0, 0, 0.07);
+  --steppuzzle-shadow-3: 0 12px 32px rgba(0, 0, 0, 0.1),
+    0 2px 6px rgba(0, 0, 0, 0.08);
+  --steppuzzle-shadow-4: 0 14px 44px rgba(0, 0, 0, 0.12),
+    0 3px 9px rgba(0, 0, 0, 0.12);
+  --steppuzzle-shadow-5: 0 18px 56px rgba(0, 0, 0, 0.16),
+    0 4px 12px rgba(0, 0, 0, 0.16);
+}

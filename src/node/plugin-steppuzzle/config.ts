@@ -24,8 +24,14 @@ export function pluginConfig(
     config() {
       return {
         resolve: {
+          root: PACKAGE_ROOT,
           alias: {
             '@runtime': join(PACKAGE_ROOT, 'src', 'runtime', 'index.ts')
+          }
+        },
+        css: {
+          modules: {
+            localsConvention: 'camelCaseOnly'
           }
         }
       };
