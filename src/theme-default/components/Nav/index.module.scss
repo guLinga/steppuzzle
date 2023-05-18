@@ -1,5 +1,5 @@
 .link:hover {
-  color: var(--island-c-brand);
+  color: var(--steppuzzle-c-brand);
   transition: color 0.2s;
 }
 
@@ -13,8 +13,19 @@
   display: flex;
   fill: currentColor;
   transition: color 0.2s;
-  color: var(--island-c-text-2);
+  color: var(--steppuzzle-c-text-2);
   &:hover {
-    color: var(--island-c-text-1);
+    color: var(--steppuzzle-c-text-1);
   }
+}
+
+.nav {
+  padding-left: max(
+    32px,
+    calc(32px + (100vw - var(--steppuzzle-layout-max-width)) / 2)
+  );
+  padding-right: max(
+    32px,
+    calc(32px + (100vw - var(--steppuzzle-layout-max-width)) / 2)
+  );
 }

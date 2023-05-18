@@ -4,6 +4,7 @@ import 'virtual:uno.css';
 import '../styles/base.css';
 import '../styles/vars.css';
 import { HomeLayout } from './HomeLayout';
+import { DocLayout } from './DocLayout';
 
 export function Layout() {
   const pageData = usePageData();
@@ -13,7 +14,7 @@ export function Layout() {
     if (pageType === 'home') {
       return <HomeLayout />;
     } else if (pageType === 'doc') {
-      return <div>正文</div>;
+      return <DocLayout />;
     } else if (pageType === '404') {
       return <div>404</div>;
     }

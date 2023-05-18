@@ -19,7 +19,7 @@ export class RouteService {
       .sync(['**/*.{js,jsx,ts,tsx,md,mdx}'], {
         cwd: this.#scanDir,
         absolute: true,
-        ignore: ['**/build/**', '**/.island/**', 'config.ts']
+        ignore: ['**/build/**', '**/.steppuzzle/**', 'config.ts']
       })
       .sort();
     files.forEach((file) => {

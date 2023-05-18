@@ -1,6 +1,7 @@
 import { relative, join } from 'path';
 import { Plugin, normalizePath } from 'vite';
 import { SiteConfig } from 'shared/types/index';
+import sirv from 'sirv';
 
 const SITE_DATA_ID = 'steppuzzle:site-data'; // 匹配 App.tsx 中的 import siteData from 'steppuzzle:site-data';
 import { PACKAGE_ROOT } from '../constants/index';
@@ -50,6 +51,10 @@ export function pluginConfig(
         // 重启 Dev Server
         await restartServer();
       }
+    },
+    configureServer(server) {
+      const publicDir = join(config.root, 'public');
+      server.middlewares.use(sirv(publicDir));
     }
   };
 }

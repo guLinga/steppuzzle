@@ -18,8 +18,13 @@ export default function Nav() {
   const nav = siteData.themeConfig.nav || [];
 
   return (
-    <header relative="~" w="full">
-      <div flex="~" items="center" justify="between" className="px-8 h-14">
+    <header relative="~" pos="t-0 l-0" w="full" z="10">
+      <div
+        flex="~"
+        items="center"
+        justify="between"
+        className={`h-14 divider-bottom ${styles.nav}`}
+      >
         <div>
           <a
             href="/"

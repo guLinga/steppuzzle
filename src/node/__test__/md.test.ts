@@ -49,7 +49,7 @@ describe('Markddown compile cases', async () => {
 
 ## h2 \`code\`
 
-### h3 [link](https://islandjs.dev)
+### h3 [link](https://steppuzzle.dev)
 
 #### h4
 
@@ -68,7 +68,7 @@ describe('Markddown compile cases', async () => {
 
         ## h2 \`code\`
 
-        ### h3 [link](https://islandjs.dev)
+        ### h3 [link](https://steppuzzle.dev)
 
         #### h4
 
