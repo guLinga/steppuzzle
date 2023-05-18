@@ -1,5 +1,6 @@
 import { Plugin } from 'vite';
 import { RouteService } from './RouteService';
+import { PageModule } from '../../shared/types/index';
 
 interface PluginOptions {
   root: string;
@@ -10,6 +11,7 @@ export interface Route {
   path: string;
   element: React.ReactElement;
   filePath: string;
+  preload: () => Promise<PageModule>;
 }
 
 export const CONVENTIONAL_ROUTE_ID = 'steppuzzle:routes';

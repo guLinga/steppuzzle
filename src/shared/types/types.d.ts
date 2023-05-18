@@ -4,4 +4,7 @@ declare module 'steppuzzle:site-data' {
   export default siteData;
 }
 
-declare module 'steppuzzle:routes';
+declare module 'steppuzzle:routes' {
+  import type { Route } from 'node/plugin-routes';
+  export const routes: Route[];
+}

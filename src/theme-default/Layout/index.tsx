@@ -1,13 +1,23 @@
-import { Content } from '@runtime';
+// import { Content } from '@runtime';
+import { usePageData } from '../../runtime';
 import 'virtual:uno.css';
 export function Layout() {
+  const pageData = usePageData();
+  console.log('pageData', pageData);
+  const { pageType } = pageData;
+  const getContent = () => {
+    if (pageType === 'home') {
+      return <div>主页</div>;
+    } else if (pageType === 'doc') {
+      return <div>正文</div>;
+    } else if (pageType === '404') {
+      return <div>404</div>;
+    }
+  };
   return (
     <div>
-      <h1 p="2" m="4">
-        Common Content
-      </h1>
-      <h1>Doc Content</h1>
-      <Content />
+      <div>Nav</div>
+      {getContent()}
     </div>
   );
 }
