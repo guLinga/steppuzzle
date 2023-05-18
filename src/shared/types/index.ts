@@ -72,3 +72,35 @@ export interface PageModule {
   frontmatter?: FrontMatter;
   [key: string]: unknown;
 }
+
+export interface Feature {
+  icon: string;
+  title: string;
+  details: string;
+}
+
+export interface Hero {
+  name: string;
+  text: string;
+  tagline: string;
+  image?: {
+    src: string;
+    alt: string;
+  };
+  actions: {
+    text: string;
+    link: string;
+    theme: 'brand' | 'alt';
+  }[];
+}
+
+export interface FrontMatter {
+  title?: string;
+  description?: string;
+  pageType?: PageType;
+  sidebar?: boolean;
+  outline?: boolean;
+  // 增加 features 和 hero 的类型
+  features?: Feature[];
+  hero?: Hero;
+}
