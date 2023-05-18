@@ -17,11 +17,13 @@ export async function initPageData(routePath: string): Promise<PageData> {
     // 待补充信息: preload 方法
     const route = matched[0].route;
     const moduleInfo = await route.preload();
+    console.log(routes, matched, moduleInfo);
     return {
       pageType: moduleInfo.frontmatter?.pageType ?? 'doc',
       siteData,
       frontmatter: moduleInfo.frontmatter,
-      pagePath: routePath
+      pagePath: routePath,
+      toc: moduleInfo.toc
     };
   }
   return {
