@@ -1,10 +1,12 @@
+import { Plugin } from 'vite';
 import { pluginIndexHtml } from './plugin-steppuzzle/indexHtml';
 import pluginReact from '@vitejs/plugin-react'; // 保持组件状态
 import { pluginConfig } from './plugin-steppuzzle/config';
 import { pluginRoutes } from './plugin-routes';
 import { PluginMdx } from './plugin-mdx';
 import { SiteConfig } from '../shared/types/index';
-import { Plugin } from 'vite';
+import pluginUnocss from 'unocss/vite';
+import unocssOptions from './unocssOptions';
 
 export async function createVitePlugins(
   siteConfig: SiteConfig,
@@ -12,6 +14,7 @@ export async function createVitePlugins(
   isSSR = false
 ) {
   return [
+    pluginUnocss(unocssOptions),
     pluginIndexHtml(),
     pluginReact({
       jsxRuntime: 'automatic'
