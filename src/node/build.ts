@@ -61,13 +61,19 @@ export async function renderPage(
   const clientChunk = clientBundle.output.find(
     (chunk) => chunk.type === 'chunk' && chunk.isEntry
   );
+  const cilentChunkCss = clientBundle.output.find(
+    (chunk) => chunk.type === 'asset'
+  );
+  // debugger;
   console.log('Rendering page in server side...');
   // 多路由打包
-  await Promise.all(
+  return Promise.all(
     routes.map(async (route) => {
       const routePath = route.path;
       // SSR 后的 html 代码
-      const appHtml = render(routePath);
+      const appHtml = await render(routePath);
+      // console.log('appHtml', appHtml);
+
       // 将 SSR 生成的 html 拼接到 html 中，将 非 SSR 生成的 js 写入
       // 因为 SSR 生成的代码 并没有 js注入，所以需要一套代码 生成 客户端和服务端的代码
       const html = `
@@ -78,6 +84,7 @@ export async function renderPage(
         <meta name="viewport" content="width=device-width,initial-scale=1">
         <title>title</title>
         <meta name="description" content="xxx">
+        <link rel="stylesheet" href="/${cilentChunkCss?.fileName}">
       </head>
       <body>
         <div id="root">${appHtml}</div>
@@ -94,7 +101,7 @@ export async function renderPage(
       await fs.writeFile(join(root, 'build', fileName), html);
     })
   );
-  await fs.remove(join(root, '.temp'));
+  // await fs.remove(join(root, '.temp'));
 }
 
 export async function build(root: string = process.cwd(), config: SiteConfig) {
