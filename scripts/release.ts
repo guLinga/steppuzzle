@@ -81,7 +81,7 @@ async function main() {
 
   step('\nCommitting changes...');
   await run('git', ['add', '-A']);
-  await run('git', ['commit', '-m', `'release: v${targetVersion}'`]);
+  await run('git', ['commit', '-m', `'chore: release v${targetVersion}'`]);
 
   step('\nPublishing packages...');
   await run('pnpm', ['publish', '--access', 'public']);
