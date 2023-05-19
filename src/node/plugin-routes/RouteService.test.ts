@@ -27,11 +27,11 @@ describe('RouteService', async () => {
       .toMatchInlineSnapshot(`
         "
               import React from 'react'
-              import loadable from '@loadable/component'
+              import loadable from \\"@loadable/component\\";
               const Route0 = loadable(() => import('TEST_DIR/a.md'));
         const Route1 = loadable(() => import('TEST_DIR/guide/index.md'));
               export const routes = [
-                {path: '/a', element: React.createElement(Route0)},{path: '/guide/', element: React.createElement(Route1)}
+                {path: '/a', element: React.createElement(Route0), preload: () => import('TEST_DIR/a.md')},{path: '/guide/', element: React.createElement(Route1), preload: () => import('TEST_DIR/guide/index.md')}
               ]
               "
       `);

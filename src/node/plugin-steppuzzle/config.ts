@@ -2,6 +2,7 @@ import { relative, join } from 'path';
 import { Plugin, normalizePath } from 'vite';
 import { SiteConfig } from 'shared/types/index';
 import sirv from 'sirv';
+import fs from 'fs-extra';
 
 const SITE_DATA_ID = 'steppuzzle:site-data'; // 匹配 App.tsx 中的 import siteData from 'steppuzzle:site-data';
 import { PACKAGE_ROOT } from '../constants/index';
@@ -54,7 +55,7 @@ export function pluginConfig(
     },
     configureServer(server) {
       const publicDir = join(config.root, 'public');
-      server.middlewares.use(sirv(publicDir));
+      if (fs.existsSync(publicDir)) server.middlewares.use(sirv(publicDir));
     }
   };
 }
