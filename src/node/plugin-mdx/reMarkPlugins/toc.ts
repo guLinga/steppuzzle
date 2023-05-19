@@ -5,8 +5,6 @@ import Slugger from 'github-slugger';
 import { parse } from 'acorn';
 import type { MdxjsEsm } from 'mdast-util-mdxjs-esm';
 
-const slugger = new Slugger();
-
 interface TocItem {
   id: string;
   text: string;
@@ -22,6 +20,8 @@ interface ChildNode {
 export const remarkPluginToc: Plugin<[], Root> = () => {
   return (tree) => {
     const toc: TocItem[] = [];
+    // 每次编译都需要进行实例化
+    const slugger = new Slugger();
     visit(tree, 'heading', (node) => {
       if (!node.depth || !node.children?.length) return;
       // 摘取 h1 ~ h6 的节点
