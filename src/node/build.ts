@@ -17,7 +17,7 @@ export async function bundle(root: string, config: SiteConfig) {
     root,
     plugins: await createVitePlugins(config, undefined, isServer),
     ssr: {
-      noExternal: ['react-router-dom'] // 将 react-router-dom 打包进 chunk 中，这样避免打包后引入错误
+      noExternal: ['react-router-dom', 'lodash-es'] // 将 react-router-dom 打包进 chunk 中，这样避免打包后引入错误
     },
     build: {
       ssr: isServer,
