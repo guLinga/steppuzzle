@@ -83,8 +83,19 @@ async function main() {
   await run('git', ['add', '-A']);
   await run('git', ['commit', '-m', `chore: release v${targetVersion}`]);
 
+  step('\nSetting npm');
+  await run('npm', ['config', 'set', 'registry', 'https://registry.npmjs.org']);
+
   step('\nPublishing packages...');
   await run('pnpm', ['publish', '--access', 'public']);
+
+  step('\nSetting npm');
+  await run('npm', [
+    'config',
+    'set',
+    'registry',
+    'https://registry.npmmirror.com'
+  ]);
 
   step('\nPushing to Github...');
   await run('git', ['tag', `v${targetVersion}`]);
