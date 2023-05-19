@@ -27,6 +27,10 @@ export default defaultConfig({
             {
               text: 'test',
               link: '/guide/test'
+            },
+            {
+              text: 'test1',
+              link: '/guide/test1'
             }
           ]
         }
