@@ -1,6 +1,6 @@
 {
   "name": "steppuzzle",
-  "version": "0.0.1",
+  "version": "0.0.0",
   "description": "A Generation Static Blog Framework 一个静态博客框架",
   "main": "dist/tsup/index.js",
   "module": "dist/tsup/index.mjs",

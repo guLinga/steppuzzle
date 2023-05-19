@@ -100,7 +100,7 @@ async function main() {
   step('\nPushing to Github...');
   await run('git', ['tag', `v${targetVersion}`]);
   await run('git', ['push', 'origin', `refs/tags/v${targetVersion}`]);
-  await run('get', ['push']);
+  await run('git', ['push']);
 }
 
 main().catch((error) => {
