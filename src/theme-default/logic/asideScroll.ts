@@ -1,4 +1,4 @@
-import { throttle } from 'lodash-es';
+// import { throttle } from 'lodash-es';
 
 let links: HTMLAnchorElement[] = [];
 
@@ -82,7 +82,8 @@ export function bindingAsideScroll() {
     }
   };
 
-  const throttledSetActiveLink = throttle(setActiveLink, 100);
+  // const throttledSetActiveLink = throttle(setActiveLink, 100);
+  const throttledSetActiveLink = setActiveLink;
 
   window.addEventListener('scroll', throttledSetActiveLink);
 
