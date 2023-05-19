@@ -1,8 +1,10 @@
 {
   "name": "steppuzzle",
-  "version": "1.0.0",
-  "description": "",
-  "main": "index.js",
+  "version": "0.0.0",
+  "description": "A Generation Static Blog Framework 一个静态博客框架",
+  "main": "dist/tsup/index.js",
+  "module": "dist/tsup/index.mjs",
+  "types": "dist/tsup/index.d.ts",
   "scripts": {
     "build": "steppuzzle build docs",
     "dev": "steppuzzle dev docs",
@@ -17,7 +19,10 @@
     "test:init": "vitest run",
     "test:ui": "vitest --ui",
     "prepare:e2e": "tsx scripts/prepare-e2e.ts",
-    "test:e2e": "playwright test"
+    "test:e2e": "playwright test",
+    "release": "tsx ./scripts/release",
+    "changelog": "conventional-changelog -p angular -i CHANGELOG.md -s",
+    "test:release": "pnpm release --dry"
   },
   "bin": {
     "steppuzzle": "bin/steppuzzle.js"
@@ -27,9 +32,21 @@
       "eslint --fix"
     ]
   },
-  "keywords": [],
+  "files": [
+    "dist",
+    "bin",
+    "README.md",
+    "README.zh-CN.md",
+    "src/runtime",
+    "src/theme-default",
+    "src/shared"
+  ],
+  "keywords": [
+    "vite",
+    "ssg"
+  ],
   "author": "GuLinga",
-  "license": "ISC",
+  "license": "MIT",
   "dependencies": {
     "@babel/core": "^7.20.12",
     "@babel/helper-plugin-utils": "^7.21.5",
@@ -81,13 +98,17 @@
     "@typescript-eslint/eslint-plugin": "^5.59.5",
     "@typescript-eslint/parser": "^5.59.5",
     "@vitest/ui": "^0.31.0",
+    "chalk": "^5.2.0",
     "commitlint": "^17.6.3",
+    "conventional-changelog-cli": "^2.2.2",
+    "enquirer": "^2.3.6",
     "eslint": "^8.40.0",
     "eslint-plugin-react": "^7.32.2",
     "eslint-plugin-react-hooks": "^4.6.0",
     "execa": "^5.1.1",
     "husky": "^8.0.3",
     "lint-staged": "^13.2.2",
+    "minimist": "^1.2.8",
     "ora": "^6.3.0",
     "rehype-stringify": "^9.0.3",
     "remark-mdx": "^2.3.0",
@@ -95,6 +116,7 @@
     "remark-rehype": "^10.1.0",
     "remark-stringify": "^10.0.3",
     "sass": "^1.62.1",
+    "semver": "^7.5.1",
     "tsup": "^6.7.0",
     "tsx": "^3.12.7",
     "typescript": "^5.0.4",
