@@ -15,6 +15,8 @@ export function MenuItem(item: NavItemWithLink) {
 
 export default function Nav() {
   const { siteData } = usePageData();
+  // console.log('siteData', siteData);
+
   const nav = siteData.themeConfig.nav || [];
 
   return (

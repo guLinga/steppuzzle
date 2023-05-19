@@ -27,7 +27,7 @@ export class RouteService {
       const fileRelativePath = normalizePath(
         path.relative(this.#scanDir, file)
       );
-      console.log('fileRelativePath', fileRelativePath);
+      // console.log('fileRelativePath', fileRelativePath);
       // 路由路径
       const routePath = this.normallzeRoutePath(fileRelativePath);
       this.#routeData.push({
