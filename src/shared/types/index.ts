@@ -35,6 +35,7 @@ export interface UserConfig {
   description?: string;
   themeConfig?: ThemeConfig;
   vite?: ViteConfiguration;
+  other: any;
 }
 
 export interface SiteConfig {
@@ -75,9 +76,11 @@ export interface PageModule {
 }
 
 export interface Feature {
-  icon: string;
+  icon?: string;
+  image?: string;
   title: string;
   details: string;
+  link?: string;
 }
 
 export interface Hero {
