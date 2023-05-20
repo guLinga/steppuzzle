@@ -1,36 +1,29 @@
 import { defaultConfig } from '../dist/tsup/index.mjs'
 
 export default defaultConfig({
-  title: "五亿个小铃铛",
+  title: "GuLinga",
+  github: 'https://github.com/GuLinga',
   themeConfig: {
     nav: [
       { text: "主页", link: "/" },
-      { text: "指南", link: "/guide/" },
+      { text: "steppuzzle指南", link: "/steppuzzleGuide/use" }
     ],
     sidebar: {
-      '/guide/': [
+      '/steppuzzleGuide/': [
         {
-          text: '教程',
+          text: 'steppuzzle指南',
           items: [
             {
-              text: '快速上手',
-              link: '/guide/a'
+              text: '使用指南',
+              link: '/steppuzzleGuide/use'
             },
             {
-              text: '如何安装',
-              link: '/guide/b'
+              text: '主题配置',
+              link: '/steppuzzleGuide/config'
             },
             {
-              text: '注意事项',
-              link: '/guide/c'
-            },
-            {
-              text: 'test',
-              link: '/guide/test'
-            },
-            {
-              text: 'test1',
-              link: '/guide/test1'
+              text: '首页配置',
+              link: '/steppuzzleGuide/home'
             }
           ]
         }
