@@ -11,13 +11,11 @@ export function App() {
 export async function initPageData(routePath: string): Promise<PageData> {
   // 获取路由组件编译后的模块内容
   const matched = matchRoutes(routes, routePath);
-
   if (matched) {
     // Preload route component
     // 待补充信息: preload 方法
     const route = matched[0].route;
     const moduleInfo = await route.preload();
-    // console.log(routes, matched, moduleInfo);
     return {
       pageType: moduleInfo.frontmatter?.pageType ?? 'doc',
       siteData,

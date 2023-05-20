@@ -56,7 +56,7 @@ async function main() {
       (i) => `${i} (${semver.inc(currentVersion, i)})`
     )
   });
-  console.log(release);
+  // console.log(release);
   const targetVersion = release.match(/\((.*)\)/)![1];
   const { confirm } = await prompt<{ confirm: boolean }>({
     type: 'confirm',

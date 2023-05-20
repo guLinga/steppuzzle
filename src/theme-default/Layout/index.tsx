@@ -11,7 +11,6 @@ import '../styles/doc.css';
 
 export function Layout() {
   const pageData = usePageData();
-  // console.log('pageData', pageData);
   const { pageType } = pageData;
   const getContent = () => {
     if (pageType === 'home') {

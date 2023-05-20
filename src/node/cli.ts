@@ -12,7 +12,7 @@ const cli = cac('steppuzzle').version('0.0.1').help();
 cli.command('dev [root]', 'start dev server').action(async (root: string) => {
   // 启动 devserver
   const createServer = async () => {
-    const { createDevServer } = await import('./dev');
+    const { createDevServer } = await import('./dev.js');
     const server = await createDevServer(root, async () => {
       await server.close();
       await createServer();
@@ -32,6 +32,8 @@ cli
     try {
       root = resolve(root);
       const config = await resolveConfig(root, 'build', 'production');
+      // debugger;
+
       // SSG 生成的核心逻辑
       await build(root, config);
     } catch (e) {
