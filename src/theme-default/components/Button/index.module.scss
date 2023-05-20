@@ -38,6 +38,19 @@
   background-color: var(--steppuzzle-button-brand-hover-bg);
 }
 
+.button.sponsor {
+  border-color: var(--steppuzzle-button-sponsor-border);
+  color: var(--steppuzzle-button-sponsor-text);
+  background-color: var(--steppuzzle-button-sponsor-bg);
+}
+
+.button.sponsor:hover {
+  opacity: 1;
+  border-color: var(--steppuzzle-button-sponsor-hover-border);
+  color: var(--steppuzzle-button-sponsor-hover-text);
+  background-color: var(--steppuzzle-button-sponsor-hover-bg);
+}
+
 .button.brand:active {
   border-color: var(--steppuzzle-button-brand-active-border);
   color: var(--steppuzzle-button-brand-active-text);

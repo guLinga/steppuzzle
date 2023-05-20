@@ -9,7 +9,7 @@ hero:
     src: /GuLinga.png
     alt: Gulinga
   actions:
-    - theme: brand
+    - theme: sponsor
       text: steppuzzle指南
       link: /steppuzzleGuide/use
     - theme: alt
