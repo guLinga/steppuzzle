@@ -1,3 +1,19 @@
+## [0.0.3](https://github.com/guLinga/steppuzzle/compare/v0.0.2...v0.0.3) (2023-05-20)
+
+
+### Bug Fixes
+
+* github icon no link ([3f94a17](https://github.com/guLinga/steppuzzle/commit/3f94a17719696607f7185243b92f210aeb24aa8a))
+* hero.actions inexistence ([7b83bd8](https://github.com/guLinga/steppuzzle/commit/7b83bd8289a3b51b5e6f9fc64b451fb6085ccac9))
+* toc no active ([83eb198](https://github.com/guLinga/steppuzzle/commit/83eb19878bccae1defc1b822459b5d868f2341e9))
+
+
+### Features
+
+* home features add image ([53c4c1e](https://github.com/guLinga/steppuzzle/commit/53c4c1ed8dfe9996b0f4676cfe6c457e2a16cf62))
+
+
+
 ## [0.0.2](https://github.com/guLinga/steppuzzle/compare/v0.0.1...v0.0.2) (2023-05-19)
 
 
