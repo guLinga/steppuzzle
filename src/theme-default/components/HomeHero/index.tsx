@@ -22,16 +22,17 @@ export function HomeHero(props: { hero: Hero }) {
             {hero.tagline}
           </p>
           <div flex="~ wrap" justify="start" p="t-8">
-            {hero.actions.map((action) => (
-              <div key={action.link} p="1">
-                <Button
-                  type="a"
-                  text={action.text}
-                  href={action.link}
-                  theme={action.theme}
-                />
-              </div>
-            ))}
+            {hero.actions &&
+              hero.actions.map((action) => (
+                <div key={action.link} p="1">
+                  <Button
+                    type="a"
+                    text={action.text}
+                    href={action.link}
+                    theme={action.theme}
+                  />
+                </div>
+              ))}
           </div>
         </div>
         {hero.image && (
