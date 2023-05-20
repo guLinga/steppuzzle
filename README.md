@@ -12,9 +12,15 @@
 
 - **English** | [简体中文](./README.zh-CN.md)
 
+- [Dome & document](https://lvzhongqiu.github.io/steppuzzleGuide/use)
+
 ## Usage
 
-The first version is currently in progress and has not yet been released
+See the documentation for details
+
+```txt
+npm i steppuzzle
+```
 
 ## Features
 

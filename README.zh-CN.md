@@ -12,9 +12,13 @@
 
 - [English](./README.md) | **简体中文**
 
+- [Demo & 文档](https://lvzhongqiu.github.io/steppuzzleGuide/use)
+
 ## 使用
 
-目前第一版本正在进行中，还未发布
+```txt
+npm i steppuzzle
+```
 
 ## 功能
 
