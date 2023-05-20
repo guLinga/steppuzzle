@@ -2,6 +2,7 @@ import { Header } from 'shared/types';
 import { useRef, useEffect } from 'react';
 import { bindingAsideScroll, scrollToTarget } from '../../logic/asideScroll';
 import { useHeaders } from '../../logic/useHeaders';
+import './index.module.scss';
 
 interface AsideProps {
   headers: Header[];
@@ -25,7 +26,7 @@ export function Aside(props: AsideProps) {
       <li key={header.id}>
         <a
           href={`#${header.id}`}
-          className="block leading-7 text-text-2 hover:text-text-1"
+          className="block leading-7 text-text-2 hover:text-text-1 asideA"
           transition="color duration-300"
           style={{
             paddingLeft: (header.depth - 2) * 12

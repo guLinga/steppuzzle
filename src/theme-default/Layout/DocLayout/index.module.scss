@@ -27,10 +27,12 @@ $sidebarPadding: calc(32px + (100vw - var(--steppuzzle-layout-max-width)) / 2);
 
 .aside-container {
   position: sticky;
-  top: 0;
-  margin-top: calc(var(--steppuzzle-nav-height) * -1 - 32px);
-  padding-top: calc(var(--steppuzzle-nav-height) + 32px);
-  height: 100vh;
+  top: 104px;
+  bottom: 0;
+  // margin-top: calc(var(--steppuzzle-nav-height) * -1 - 32px);
+  // padding-top: calc(var(--steppuzzle-nav-height) + 32px);
+  height: auto;
+  max-height: 100vh;
   overflow-x: hidden;
   overflow-y: auto;
   scrollbar-width: none;

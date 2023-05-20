@@ -22,7 +22,7 @@ export default function Nav() {
   const nav = siteData.themeConfig.nav || [];
 
   return (
-    <header relative="~" pos="t-0 l-0" w="full" z="10">
+    <header relative="~" fixed="~" pos="t-0 l-0" w="full" z="10">
       <div
         flex="~"
         items="center"
