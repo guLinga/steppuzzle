@@ -15,7 +15,9 @@ export function MenuItem(item: NavItemWithLink) {
 
 export default function Nav() {
   const { siteData } = usePageData();
-  // console.log('siteData', siteData);
+  const {
+    other: { github }
+  } = siteData;
 
   const nav = siteData.themeConfig.nav || [];
 
@@ -55,7 +57,7 @@ export default function Nav() {
             before="menu-item-before"
             ml="2"
           >
-            <a href="/">
+            <a href={github ?? '/'} target={github || '__blank'}>
               <div className="i-carbon-logo-github w-5 h-5 fill-current"></div>
             </a>
           </div>
