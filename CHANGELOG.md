@@ -1,3 +1,14 @@
+## [0.0.4](https://github.com/guLinga/steppuzzle/compare/v0.0.3...v0.0.4) (2023-05-21)
+
+
+### Bug Fixes
+
+* cli --help version ([4a2b0d0](https://github.com/guLinga/steppuzzle/commit/4a2b0d00f0a067dd4c30c226a54ceeea24202255))
+* github root routes ([2c38fb4](https://github.com/guLinga/steppuzzle/commit/2c38fb4651b5d7ac604730fb1103f97179e68aac))
+* home path ([293ccae](https://github.com/guLinga/steppuzzle/commit/293ccaef4f4714f8b795feffdac90b0de1f30968))
+
+
+
 ## [0.0.3](https://github.com/guLinga/steppuzzle/compare/v0.0.2...v0.0.3) (2023-05-20)
 
 
