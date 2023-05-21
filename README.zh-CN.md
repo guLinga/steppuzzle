@@ -16,6 +16,8 @@
 
 ## 使用
 
+详细内容请看文档
+
 ```txt
 npm i steppuzzle
 ```
