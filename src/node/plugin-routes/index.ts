@@ -1,8 +1,9 @@
 import { Plugin } from 'vite';
 import { RouteService } from './RouteService';
-import { PageModule } from '../../shared/types/index';
+import { PageModule, SiteConfig } from '../../shared/types/index';
 
 interface PluginOptions {
+  siteConfig: SiteConfig;
   root: string;
   isSSR: boolean;
 }
@@ -17,6 +18,7 @@ export interface Route {
 export const CONVENTIONAL_ROUTE_ID = 'steppuzzle:routes';
 
 export function pluginRoutes(options: PluginOptions): Plugin {
+  const { githubRepositories } = options.siteConfig.siteData.other;
   const routerService = new RouteService(options.root);
   return {
     name: 'steppuzzle:routes',
@@ -30,7 +32,10 @@ export function pluginRoutes(options: PluginOptions): Plugin {
     },
     load(id) {
       if (id === '\0' + CONVENTIONAL_ROUTE_ID) {
-        return routerService.generateRoutesCode(options.isSSR || false);
+        return routerService.generateRoutesCode(
+          options.isSSR || false,
+          githubRepositories as string
+        );
       }
     }
   };

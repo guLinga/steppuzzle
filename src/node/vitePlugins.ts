@@ -21,6 +21,7 @@ export async function createVitePlugins(
     }),
     pluginConfig(siteConfig, restartServer),
     pluginRoutes({
+      siteConfig,
       root: siteConfig.root,
       isSSR
     }),

@@ -36,7 +36,7 @@ export class RouteService {
       });
     });
   }
-  generateRoutesCode(ssr = false) {
+  generateRoutesCode(ssr = false, githubRepositories = '') {
     return `
       import React from 'react'
       ${ssr ? '' : 'import loadable from "@loadable/component";'}
@@ -49,7 +49,7 @@ export class RouteService {
         .join('\n')}
       export const routes = [
         ${this.#routeData.map((route, index) => {
-          return `{path: '${route.routePath}', element: React.createElement(Route${index}), preload: () => import('${route.absoultePath}')}`;
+          return `{path: '/${githubRepositories}${route.routePath}', element: React.createElement(Route${index}), preload: () => import('${route.absoultePath}')}`;
         })}
       ]
       `;

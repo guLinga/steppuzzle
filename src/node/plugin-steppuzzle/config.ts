@@ -1,6 +1,7 @@
 import { relative, join } from 'path';
 import { Plugin, normalizePath } from 'vite';
 import { SiteConfig } from 'shared/types/index';
+import reSiteData from './reSiteData';
 import sirv from 'sirv';
 import fs from 'fs-extra';
 
@@ -20,7 +21,7 @@ export function pluginConfig(
     },
     load(id) {
       if (id === '\0' + SITE_DATA_ID) {
-        return `export default ${JSON.stringify(config.siteData)}`;
+        return `export default ${JSON.stringify(reSiteData(config.siteData))}`;
       }
     },
     config() {
