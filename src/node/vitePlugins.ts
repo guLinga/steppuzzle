@@ -10,6 +10,7 @@ import unocssOptions from './unocssOptions';
 
 export async function createVitePlugins(
   siteConfig: SiteConfig,
+  evn: 'build' | 'serve',
   restartServer?: () => Promise<void>,
   isSSR = false
 ) {
@@ -25,6 +26,6 @@ export async function createVitePlugins(
       root: siteConfig.root,
       isSSR
     }),
-    await PluginMdx()
+    await PluginMdx(siteConfig.siteData.other.githubRepositories, evn)
   ] as Plugin[];
 }

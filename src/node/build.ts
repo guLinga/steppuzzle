@@ -9,19 +9,24 @@ import { SiteConfig } from '../shared/types';
 import { createVitePlugins } from './vitePlugins';
 import { Route } from './plugin-routes';
 
-export async function bundle(root: string, config: SiteConfig) {
+export async function bundle(
+  root: string,
+  config: SiteConfig,
+  buildPath: string
+) {
   const resolveViteConfig = async (
-    isServer: boolean
+    isServer: boolean,
+    evn: 'build' | 'serve'
   ): Promise<InlineConfig> => ({
     mode: 'production',
     root,
-    plugins: await createVitePlugins(config, undefined, isServer),
+    plugins: await createVitePlugins(config, evn, undefined, isServer),
     ssr: {
       noExternal: ['react-router-dom', 'lodash-es'] // 将 react-router-dom 打包进 chunk 中，这样避免打包后引入错误
     },
     build: {
       ssr: isServer,
-      outDir: isServer ? join(root, '.temp') : join(root, 'build'),
+      outDir: isServer ? join(root, '.temp') : join(root, 'build', buildPath),
       rollupOptions: {
         input: isServer ? SERVER_ENTRY_PATH : CLIENT_ENTRY_PATH,
         output: {
@@ -38,9 +43,9 @@ export async function bundle(root: string, config: SiteConfig) {
     // viteBuild 类似于 vite build 命令
     const [clientBundle, serverBundle] = await Promise.all([
       // client build
-      viteBuild(await resolveViteConfig(false)),
+      viteBuild(await resolveViteConfig(false, 'build')),
       // server build
-      viteBuild(await resolveViteConfig(true))
+      viteBuild(await resolveViteConfig(true, 'build'))
     ]);
     spinner.stop();
     return [clientBundle, serverBundle] as [RollupOutput, RollupOutput];
@@ -54,9 +59,9 @@ export async function renderPage(
   render: (pagePath: string) => string,
   root: string,
   clientBundle: RollupOutput,
-  routes: Route[]
+  routes: Route[],
+  buildPath: string
 ) {
-  // debugger;
   // 找到 非 SSR 的打包文件
   const clientChunk = clientBundle.output.find(
     (chunk) => chunk.type === 'chunk' && chunk.isEntry
@@ -64,16 +69,15 @@ export async function renderPage(
   const cilentChunkCss = clientBundle.output.find(
     (chunk) => chunk.type === 'asset'
   );
-  // debugger;
   console.log('Rendering page in server side...');
   // 多路由打包
+  buildPath = buildPath ? '/' + buildPath : buildPath;
+  const test = buildPath;
   return Promise.all(
     routes.map(async (route) => {
       const routePath = route.path;
       // SSR 后的 html 代码
       const appHtml = await render(routePath);
-      // console.log('appHtml', appHtml);
-
       // 将 SSR 生成的 html 拼接到 html 中，将 非 SSR 生成的 js 写入
       // 因为 SSR 生成的代码 并没有 js注入，所以需要一套代码 生成 客户端和服务端的代码
       const html = `
@@ -84,11 +88,11 @@ export async function renderPage(
         <meta name="viewport" content="width=device-width,initial-scale=1">
         <title>title</title>
         <meta name="description" content="xxx">
-        <link rel="stylesheet" href="/${cilentChunkCss?.fileName}">
+        <link rel="stylesheet" href="${buildPath}/${cilentChunkCss?.fileName}">
       </head>
       <body>
         <div id="root">${appHtml}</div>
-        <script type="module" src="/${clientChunk?.fileName}"></script>
+        <script type="module" src="${buildPath}/${clientChunk?.fileName}"></script>
       </body>
     </html>`.trim();
       // 生成文件的名称
@@ -105,13 +109,14 @@ export async function renderPage(
 }
 
 export async function build(root: string = process.cwd(), config: SiteConfig) {
+  const buildPath = config.siteData.other.githubRepositories || '';
   // 1. bundle - client 端 + server 端
-  const [clientBundle] = await bundle(root, config);
+  const [clientBundle] = await bundle(root, config, buildPath);
   // 2. 引入 server-entry 模块
   const serverEntryPath = join(root, '.temp', 'ssr-entry.js');
   const { render, routes } = await import(
     pathToFileURL(serverEntryPath).toString()
   );
   // 3. 服务端渲染，产出 HTML
-  await renderPage(render, root, clientBundle, routes);
+  await renderPage(render, root, clientBundle, routes, buildPath);
 }

@@ -32,7 +32,6 @@ cli
     try {
       root = resolve(root);
       const config = await resolveConfig(root, 'build', 'production');
-      // debugger;
 
       // SSG 生成的核心逻辑
       await build(root, config);
