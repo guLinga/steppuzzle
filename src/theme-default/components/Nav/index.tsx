@@ -31,7 +31,7 @@ export default function Nav() {
       >
         <div>
           <a
-            href="/"
+            href={'/' + (siteData.other.githubRepositories || '')}
             hover="opacity-60"
             className="w-full h-full text-1rem font-semibold flex items-center"
           >
