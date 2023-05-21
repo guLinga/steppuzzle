@@ -4,15 +4,15 @@ import { build } from './build';
 import { resolveConfig } from './config';
 
 // 获取 package.json 中的版本号
-// const version = require('../../package.json').version;
+const version = (await import('../../package.json')).version;
 
-const cli = cac('steppuzzle').version('0.0.1').help();
+const cli = cac('steppuzzle').version(version).help();
 
 // 添加 dev 命令
 cli.command('dev [root]', 'start dev server').action(async (root: string) => {
   // 启动 devserver
   const createServer = async () => {
-    const { createDevServer } = await import('./dev.js');
+    const { createDevServer } = await import('./dev');
     const server = await createDevServer(root, async () => {
       await server.close();
       await createServer();
