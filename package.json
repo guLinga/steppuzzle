@@ -14,7 +14,7 @@
     "ssg:run": "echo 'ssg build' && pnpm serve docs/build",
     "tsup:build": "echo 'start tsup build' && tsup",
     "tsup:run": "echo 'start tsup run' && tsup --watch",
-    "server:run": "echo 'localhost serve' && pnpm build && pnpm serve docs/build",
+    "server:run": "echo 'localhost serve' && pnpm serve docs/build",
     "eslint:run": "echo 'run eslint and prettier' && eslint --fix --ext .ts,.tsx,.js,.jsx --quiet ./",
     "test:init": "vitest run",
     "test:ui": "vitest --ui",
