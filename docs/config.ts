@@ -3,6 +3,7 @@ import { defaultConfig } from '../dist/tsup/index.mjs'
 export default defaultConfig({
   title: "GuLinga",
   github: 'https://github.com/GuLinga',
+  githubRepositories: 'step-build',
   themeConfig: {
     nav: [
       { text: "主页", link: "/" },
