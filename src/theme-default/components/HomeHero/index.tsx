@@ -1,8 +1,16 @@
 import { Hero } from 'shared/types';
 import styles from './index.module.scss';
 import { Button } from '../Button/index';
-export function HomeHero(props: { hero: Hero }) {
-  const { hero } = props;
+import { useMemo } from 'react';
+export function HomeHero(props: {
+  hero: Hero;
+  evn: 'build' | 'serve';
+  githubRepositories: string;
+}) {
+  const { hero, evn, githubRepositories } = props;
+  const prefix = useMemo(() => {
+    return evn ? (evn === 'build' ? '/' + githubRepositories : '') : '';
+  }, [evn, githubRepositories]);
   return (
     <div m="auto" p="t-20 x-16 b-16">
       <div flex="~" className="max-w-1152px" m="auto">
@@ -37,7 +45,7 @@ export function HomeHero(props: { hero: Hero }) {
         </div>
         {hero.image && (
           <div w="max-96" h="max-96" flex="center" m="auto">
-            <img src={hero.image.src} alt={hero.image.alt} />
+            <img src={prefix + hero.image.src} alt={prefix + hero.image.alt} />
           </div>
         )}
       </div>

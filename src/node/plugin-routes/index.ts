@@ -6,6 +6,7 @@ interface PluginOptions {
   siteConfig: SiteConfig;
   root: string;
   isSSR: boolean;
+  evn: 'build' | 'serve';
 }
 
 export interface Route {
@@ -13,13 +14,19 @@ export interface Route {
   element: React.ReactElement;
   filePath: string;
   preload: () => Promise<PageModule>;
+  evn: 'build' | 'serve';
+  githubRepositories: string;
 }
 
 export const CONVENTIONAL_ROUTE_ID = 'steppuzzle:routes';
 
 export function pluginRoutes(options: PluginOptions): Plugin {
   const { githubRepositories } = options.siteConfig.siteData.other;
-  const routerService = new RouteService(options.root);
+  const routerService = new RouteService(
+    options.root,
+    options.evn,
+    githubRepositories
+  );
   return {
     name: 'steppuzzle:routes',
     async configResolved() {
@@ -32,10 +39,7 @@ export function pluginRoutes(options: PluginOptions): Plugin {
     },
     load(id) {
       if (id === '\0' + CONVENTIONAL_ROUTE_ID) {
-        return routerService.generateRoutesCode(
-          options.isSSR || false,
-          githubRepositories as string
-        );
+        return routerService.generateRoutesCode(options.isSSR || false);
       }
     }
   };

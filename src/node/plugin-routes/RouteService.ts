@@ -10,8 +10,16 @@ interface RouteMeta {
 export class RouteService {
   #scanDir: string;
   #routeData: RouteMeta[] = [];
-  constructor(scanDir: string) {
+  githubRepositories = '';
+  evn: 'build' | 'serve';
+  constructor(
+    scanDir: string,
+    evn: 'build' | 'serve',
+    githubRepositories: string
+  ) {
     this.#scanDir = scanDir;
+    this.evn = evn;
+    this.githubRepositories = githubRepositories;
   }
   async init() {
     // 扫描文件
@@ -27,7 +35,6 @@ export class RouteService {
       const fileRelativePath = normalizePath(
         path.relative(this.#scanDir, file)
       );
-      // console.log('fileRelativePath', fileRelativePath);
       // 路由路径
       const routePath = this.normallzeRoutePath(fileRelativePath);
       this.#routeData.push({
@@ -36,7 +43,8 @@ export class RouteService {
       });
     });
   }
-  generateRoutesCode(ssr = false, githubRepositories = '') {
+  generateRoutesCode(ssr = false) {
+    const { evn, githubRepositories } = this;
     return `
       import React from 'react'
       ${ssr ? '' : 'import loadable from "@loadable/component";'}
@@ -49,7 +57,13 @@ export class RouteService {
         .join('\n')}
       export const routes = [
         ${this.#routeData.map((route, index) => {
-          return `{path: '/${githubRepositories}${route.routePath}', element: React.createElement(Route${index}), preload: () => import('${route.absoultePath}')}`;
+          return `{
+            path: '/${githubRepositories}${route.routePath}',
+            element: React.createElement(Route${index}),
+            preload: () => import('${route.absoultePath}'),
+            evn: '${evn}',
+            githubRepositories: '${githubRepositories}'
+          }`;
         })}
       ]
       `;

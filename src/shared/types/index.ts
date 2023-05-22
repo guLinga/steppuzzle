@@ -66,6 +66,8 @@ export interface PageData {
   frontmatter: FrontMatter;
   pageType: PageType;
   toc?: Header[];
+  evn?: 'build' | 'serve';
+  githubRepositories?: string;
 }
 
 export interface PageModule {

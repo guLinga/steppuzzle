@@ -24,7 +24,8 @@ export async function createVitePlugins(
     pluginRoutes({
       siteConfig,
       root: siteConfig.root,
-      isSSR
+      isSSR,
+      evn
     }),
     await PluginMdx(siteConfig.siteData.other.githubRepositories, evn)
   ] as Plugin[];

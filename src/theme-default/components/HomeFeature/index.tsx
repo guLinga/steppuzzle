@@ -1,7 +1,15 @@
+import { useMemo } from 'react';
 import { Feature } from 'shared/types';
 
-export function HomeFeature(props: { features: Feature[] }) {
-  // console.log('features', props.features);
+export function HomeFeature(props: {
+  features: Feature[];
+  evn: 'build' | 'serve';
+  githubRepositories: string;
+}) {
+  const { evn, githubRepositories } = props;
+  const prefix = useMemo(() => {
+    return evn ? (evn === 'build' ? '/' + githubRepositories : '') : '';
+  }, [evn, githubRepositories]);
   return (
     <div className="max-w-1152px" m="auto" flex="~ wrap" justify="between">
       {props.features.map((feature) => {
@@ -27,7 +35,7 @@ export function HomeFeature(props: { features: Feature[] }) {
                 border="rounded-md"
                 className="mb-5 w-12 h-12 text-3xl flex-center"
               >
-                {image ? <img src={image} alt="☑️" /> : icon}
+                {image ? <img src={prefix + image} alt="☑️" /> : icon}
               </div>
               <h2 font="bold">{title}</h2>
               <p text="sm text-2" font="medium" className="pt-2 leading-6">

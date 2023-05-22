@@ -15,12 +15,15 @@ export async function initPageData(routePath: string): Promise<PageData> {
     // Preload route component
     // 待补充信息: preload 方法
     const route = matched[0].route;
+    const { evn, githubRepositories } = route;
     const moduleInfo = await route.preload();
     return {
       pageType: moduleInfo.frontmatter?.pageType ?? 'doc',
       siteData,
       frontmatter: moduleInfo.frontmatter,
       pagePath: routePath,
+      evn,
+      githubRepositories,
       toc: moduleInfo.toc
     };
   }
