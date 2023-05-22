@@ -1,3 +1,18 @@
+## [0.0.5](https://github.com/guLinga/steppuzzle/compare/v0.0.4...v0.0.5) (2023-05-22)
+
+
+### Bug Fixes
+
+* github no root and image serve build error ([f949421](https://github.com/guLinga/steppuzzle/commit/f94942109c3ba37f155cffcd4f18b987474f0405))
+* home build image error ([5168ed5](https://github.com/guLinga/steppuzzle/commit/5168ed5185b4e4f46444049aeb9482161b12bbce))
+
+
+### Features
+
+* replace image scr plugin ([6709cb6](https://github.com/guLinga/steppuzzle/commit/6709cb67e5fff3617a7d3e204da86d133edab543))
+
+
+
 ## [0.0.4](https://github.com/guLinga/steppuzzle/compare/v0.0.3...v0.0.4) (2023-05-21)
 
 
