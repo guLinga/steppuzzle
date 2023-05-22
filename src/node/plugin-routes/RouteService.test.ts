@@ -5,7 +5,7 @@ import { normalizePath } from 'vite';
 
 describe('RouteService', async () => {
   const testDir = normalizePath(path.join(__dirname, 'fixtures'));
-  const routeService = new RouteService(testDir);
+  const routeService = new RouteService(testDir, 'build', 'step-build');
   await routeService.init();
   test('conventional route by file structre', () => {
     const routeMeta = routeService.getRouteMeta().map((item) => ({
@@ -31,7 +31,19 @@ describe('RouteService', async () => {
               const Route0 = loadable(() => import('TEST_DIR/a.md'));
         const Route1 = loadable(() => import('TEST_DIR/guide/index.md'));
               export const routes = [
-                {path: '//a', element: React.createElement(Route0), preload: () => import('TEST_DIR/a.md')},{path: '//guide/', element: React.createElement(Route1), preload: () => import('TEST_DIR/guide/index.md')}
+                {
+                    path: '/step-build/a',
+                    element: React.createElement(Route0),
+                    preload: () => import('TEST_DIR/a.md'),
+                    evn: 'build',
+                    githubRepositories: 'step-build'
+                  },{
+                    path: '/step-build/guide/',
+                    element: React.createElement(Route1),
+                    preload: () => import('TEST_DIR/guide/index.md'),
+                    evn: 'build',
+                    githubRepositories: 'step-build'
+                  }
               ]
               "
       `);
