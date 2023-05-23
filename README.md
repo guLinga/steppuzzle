@@ -3,11 +3,11 @@
 </h1>
 
 <p align="center">
-🎨一个静态博客框架
+🎨A Generation Static Blog Framework
 </p>
 
 <pre align="center">
-🔖开发中
+🔖Developing
 </pre>
 
 - **English** | [简体中文](./README.zh-CN.md)
