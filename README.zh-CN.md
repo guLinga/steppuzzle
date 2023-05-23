@@ -1,5 +1,5 @@
 <h1 align="center">
-<a href="javascript;" style="font-size: 54px;">📦️steppuzzle</a>
+<a href="javascript;"><font size="54">📦️steppuzzle</font></a>
 </h1>
 
 <p align="center">
