@@ -1,5 +1,5 @@
 <h1 align="center">
-<a href="javascript;">steppuzzle</a>
+<a href="javascript;" style="font-size: 54px;">📦️steppuzzle</a>
 </h1>
 
 <p align="center">
@@ -37,6 +37,10 @@ npm i steppuzzle
 💡UI 测试 with [playwright](https://github.com/microsoft/playwright)
 
 🏷️ 静态站点生成 (SSG) by vite-ssg and vite-ssr（支持单页面应用！）
+
+## 今后计划
+
+🍻 自定义 markdown 渲染模板
 
 ## 致谢
 
