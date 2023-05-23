@@ -1,3 +1,12 @@
+## [0.0.6](https://github.com/guLinga/steppuzzle/compare/v0.0.5...v0.0.6) (2023-05-23)
+
+
+### Bug Fixes
+
+* build error create html Dir ([aee2f4c](https://github.com/guLinga/steppuzzle/commit/aee2f4c2b9b90935803538c9ed2cfa1c5112f233))
+
+
+
 ## [0.0.5](https://github.com/guLinga/steppuzzle/compare/v0.0.4...v0.0.5) (2023-05-22)
 
 

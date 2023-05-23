@@ -32,13 +32,13 @@ describe('RouteService', async () => {
         const Route1 = loadable(() => import('TEST_DIR/guide/index.md'));
               export const routes = [
                 {
-                    path: '/step-build/a',
+                    path: '//step-build/a',
                     element: React.createElement(Route0),
                     preload: () => import('TEST_DIR/a.md'),
                     evn: 'build',
                     githubRepositories: 'step-build'
                   },{
-                    path: '/step-build/guide/',
+                    path: '//step-build/guide/',
                     element: React.createElement(Route1),
                     preload: () => import('TEST_DIR/guide/index.md'),
                     evn: 'build',
