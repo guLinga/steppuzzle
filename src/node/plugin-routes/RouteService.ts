@@ -44,7 +44,10 @@ export class RouteService {
     });
   }
   generateRoutesCode(ssr = false) {
-    const { evn, githubRepositories } = this;
+    let { githubRepositories } = this;
+    const { evn } = this;
+    const githubRepositoriesTemp = githubRepositories;
+    githubRepositories = githubRepositories ? '/' + githubRepositories : '';
     return `
       import React from 'react'
       ${ssr ? '' : 'import loadable from "@loadable/component";'}
@@ -62,7 +65,7 @@ export class RouteService {
             element: React.createElement(Route${index}),
             preload: () => import('${route.absoultePath}'),
             evn: '${evn}',
-            githubRepositories: '${githubRepositories}'
+            githubRepositories: '${githubRepositoriesTemp}'
           }`;
         })}
       ]

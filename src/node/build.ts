@@ -1,4 +1,4 @@
-import { build as viteBuild, InlineConfig } from 'vite';
+import { build as viteBuild, InlineConfig, normalizePath } from 'vite';
 import type { RollupOutput } from 'rollup';
 import { CLIENT_ENTRY_PATH, SERVER_ENTRY_PATH } from './constants';
 import { join, dirname } from 'path';
@@ -72,7 +72,6 @@ export async function renderPage(
   console.log('Rendering page in server side...');
   // 多路由打包
   buildPath = buildPath ? '/' + buildPath : buildPath;
-  const test = buildPath;
   return Promise.all(
     routes.map(async (route) => {
       const routePath = route.path;
@@ -96,10 +95,10 @@ export async function renderPage(
       </body>
     </html>`.trim();
       // 生成文件的名称
-      const fileName = routePath.endsWith('/')
+      let fileName = routePath.endsWith('/')
         ? `${routePath}index.html`
         : `${routePath}.html`;
-
+      fileName = normalizePath(fileName);
       // 写入 文件
       await fs.ensureDir(join(root, 'build', dirname(fileName)));
       await fs.writeFile(join(root, 'build', fileName), html);
