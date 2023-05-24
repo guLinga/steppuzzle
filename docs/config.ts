@@ -25,6 +25,10 @@ export default defaultConfig({
             {
               text: '首页配置',
               link: '/steppuzzleGuide/home'
+            },
+            {
+              text: '测试',
+              link: '/steppuzzleGuide/test'
             }
           ]
         }
